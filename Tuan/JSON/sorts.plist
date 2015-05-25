@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>label</key>
+		<string>默认排序</string>
+		<key>value</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>label</key>
+		<string>价格最低</string>
+		<key>value</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>label</key>
+		<string>价格最高</string>
+		<key>value</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>label</key>
+		<string>人气最高</string>
+		<key>value</key>
+		<integer>4</integer>
+	</dict>
+	<dict>
+		<key>label</key>
+		<string>最新发布</string>
+		<key>value</key>
+		<integer>5</integer>
+	</dict>
+	<dict>
+		<key>label</key>
+		<string>即将结束</string>
+		<key>value</key>
+		<integer>6</integer>
+	</dict>
+	<dict>
+		<key>label</key>
+		<string>离我最近</string>
+		<key>value</key>
+		<integer>7</integer>
+	</dict>
+</array>
+</plist>

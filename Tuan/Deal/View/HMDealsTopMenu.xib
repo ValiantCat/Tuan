@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HMDealsTopMenu">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAS-ho-00p" userLabel="分割线">
+                    <rect key="frame" x="5" y="5" width="1" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="K7f-4B-eEY"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFx-0n-DSu" userLabel="图标按钮">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="icon_category_0">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="icon_category_highlighted_0"/>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美食" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-uY-esv" userLabel="标题">
+                    <rect key="frame" x="46" y="0.0" width="104" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="LZM-hc-Kc6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客家菜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obr-85-Yfl" userLabel="子标题">
+                    <rect key="frame" x="46" y="20" width="104" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0Qe-uY-esv" secondAttribute="trailing" id="23o-rO-nK6"/>
+                <constraint firstAttribute="bottom" secondItem="TAS-ho-00p" secondAttribute="bottom" constant="5" id="5IW-Bv-xlh"/>
+                <constraint firstItem="TAS-ho-00p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="82Q-jI-0L4"/>
+                <constraint firstItem="TFx-0n-DSu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BRv-oU-TCP"/>
+                <constraint firstItem="TAS-ho-00p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="PH8-o4-9Gf"/>
+                <constraint firstItem="TFx-0n-DSu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q9M-xl-hEC"/>
+                <constraint firstAttribute="bottom" secondItem="TFx-0n-DSu" secondAttribute="bottom" id="Rg0-Ex-CMb"/>
+                <constraint firstAttribute="trailing" secondItem="TFx-0n-DSu" secondAttribute="trailing" id="SRO-95-yV6"/>
+                <constraint firstItem="Obr-85-Yfl" firstAttribute="leading" secondItem="TAS-ho-00p" secondAttribute="trailing" constant="40" id="XZH-EP-7Nr"/>
+                <constraint firstAttribute="bottom" secondItem="Obr-85-Yfl" secondAttribute="bottom" constant="5" id="YwT-Ii-hjW"/>
+                <constraint firstItem="Obr-85-Yfl" firstAttribute="top" secondItem="0Qe-uY-esv" secondAttribute="bottom" constant="5" id="ZyM-h4-uml"/>
+                <constraint firstItem="0Qe-uY-esv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ct5-4a-Frb"/>
+                <constraint firstItem="0Qe-uY-esv" firstAttribute="leading" secondItem="TAS-ho-00p" secondAttribute="trailing" constant="40" id="uh8-8v-fHP"/>
+                <constraint firstAttribute="trailing" secondItem="Obr-85-Yfl" secondAttribute="trailing" id="uiX-Jg-Urs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageButton" destination="TFx-0n-DSu" id="GdM-nJ-bc6"/>
+                <outlet property="subtitleLabel" destination="Obr-85-Yfl" id="MZM-Ta-H0Y"/>
+                <outlet property="titleLabel" destination="0Qe-uY-esv" id="0fF-Mz-knx"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_category_0" width="30" height="30"/>
+        <image name="icon_category_highlighted_0" width="30" height="30"/>
+    </resources>
+</document>
