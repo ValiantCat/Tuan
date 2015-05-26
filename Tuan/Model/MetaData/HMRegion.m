@@ -7,7 +7,7 @@
 //
 
 #import "HMRegion.h"
-
+#import "MJExtension.h"
 @implementation HMRegion
 - (NSString *)title
 {
@@ -18,4 +18,5 @@
 {
     return self.subregions;
 }
+MJCodingImplementation
 @end

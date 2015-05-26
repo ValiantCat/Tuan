@@ -7,7 +7,7 @@
 //
 
 #import "HMCategory.h"
-
+#import "MJExtension.h"
 @implementation HMCategory
 - (NSString *)title
 {
@@ -28,4 +28,5 @@
 {
     return self.small_highlighted_icon;
 }
+MJCodingImplementation
 @end

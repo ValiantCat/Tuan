@@ -17,6 +17,7 @@
 #import "UIView+AutoLayout.h"
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
+#import "UIButton+Extension.h"
 #import "HMDealsTopMenu.h"
 #import "HMDropdownMenu.h"
 #import "UIButton+Extension.h"

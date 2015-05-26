@@ -62,7 +62,10 @@ class HMRegionsViewController: UIViewController {
         willSet {
             if newValue == nil {return }
             var itsmNSArray = NSArray(array: menu.items)
+//            这个200 我瞎写的 为了屏蔽找不到索引越界的情况
+            if itsmNSArray.indexOfObject(newValue) <= 200  {
             menu.selectSub(Int32(itsmNSArray.indexOfObject(newValue)))
+            }
         }
     }
 

@@ -7,7 +7,7 @@
 //
 
 #import "HMSort.h"
-
+#import "MJExtension.h"
 @implementation HMSort
-
+MJCodingImplementation
 @end

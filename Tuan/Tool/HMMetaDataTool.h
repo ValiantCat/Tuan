@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "HMSingleton.h"
 #import "HMCity.h"
+#import "HMSort.h"
 @interface HMMetaDataTool : NSObject
 HMSingletonH(MetaDataTool)
 /**
@@ -28,4 +29,37 @@ HMSingletonH(MetaDataTool)
  */
 @property (strong, nonatomic, readonly) NSArray *sorts;
 - (HMCity *)cityWithName:(NSString *)name;
+
+
+
+
+
+/**
+ *  存储选中的城市名称
+ */
+- (void)saveSelectedCityName:(NSString *)name;
+///**
+// *  存储选中的区域
+// */
+//- (void)saveSelectedRegion:(hm *)name;
+///**
+// *  存储选中的子区域名字
+// */
+//- (void)saveSelectedCityName:(NSString *)name;
+///**
+// *  存储选中的分类
+// */
+//- (void)saveSelectedCityName:(NSString *)name;
+///**
+// *  存储选中的子分类名字
+// */
+//- (void)saveSelectedCityName:(NSString *)name;
+/**
+ *  存储选中的排序
+ */
+- (void)saveSelectedSort:(HMSort *)sort;
+
+- (HMCity *)selectedCity;
+- (HMSort *)selectedSort;
+
 @end

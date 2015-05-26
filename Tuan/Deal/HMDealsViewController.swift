@@ -69,11 +69,18 @@ class HMDealsViewController: UICollectionViewController {
     /// 团购数据
     var deals = [HMDeal]()
     /** 存储请求结果的总数*/
-//    @property (nonatomic, assign) int totalNumber;
+
     var totalNumber:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.alwaysBounceHorizontal = true
+        selectedSort = HMMetaDataTool.sharedMetaDataTool().selectedSort()
+        selectedCity = HMMetaDataTool.sharedMetaDataTool().selectedCity()
+        var rs = regionPopover.contentViewController as! HMRegionsViewController
+        if selectedCity != nil {
+        rs.regions = (selectedCity.regions as? [HMRegion] ) ?? nil  ;
+
+        }
+//        collectionView?.alwaysBounceHorizontal = true
         collectionView?.alwaysBounceVertical = true
         self.collectionView?.backgroundColor = UIColor.clearColor()
         setupMenu()
@@ -95,7 +102,7 @@ class HMDealsViewController: UICollectionViewController {
         self.footer.scrollView = self.collectionView
         self.header.delegate = self
         self.footer.delegate = self
-        
+        header.beginRefreshing()
         
     }
     func citySelecte(noti:NSNotification){
@@ -107,19 +114,21 @@ class HMDealsViewController: UICollectionViewController {
         //
         var regionVc = regionPopover.contentViewController as! HMRegionsViewController
         regionVc.regions = selectedCity?.regions as! [HMRegion]
-        
         header.beginRefreshing()
+        
+        // 存储用户的选择到沙盒
+        HMMetaDataTool.sharedMetaDataTool().saveSelectedCityName(selectedCity.name)
+
     }
     func sortSelect(noti:NSNotification){
-        
-        
-        
         var dict = noti.userInfo as! [String:HMSort]
         selectedSort = dict[HMSortNotification.HMSelectedSort]
         sortMenu.subtitleLabel.text = selectedSort?.label
-        
         sortPopover.dismissPopoverAnimated(true)
         header.beginRefreshing()
+        // 存储用户的选择到沙盒
+        HMMetaDataTool.sharedMetaDataTool().saveSelectedSort(selectedSort)
+
     }
     func regionDidSelect(noti:NSNotification) {
         
@@ -169,7 +178,10 @@ class HMDealsViewController: UICollectionViewController {
         categoryMenu.addTarget(self, action: Selector("categoryMenuClick"))
         // 3.区域
         regionMenu = HMDealsTopMenu()
-        
+        regionMenu.imageButton.image = "icon_district";
+        regionMenu.imageButton.highlightedImage = "icon_district_highlighted";
+        var selectName = selectedCity?.name ?? "   "
+        regionMenu.titleLabel.text = "\(selectName) - 全部"
         var regionItem = UIBarButtonItem(customView: regionMenu)
         regionMenu.addTarget(self, action: Selector("regionMenuClick"))
         
@@ -177,11 +189,10 @@ class HMDealsViewController: UICollectionViewController {
         sortMenu = HMDealsTopMenu()
         var sortItem = UIBarButtonItem(customView: sortMenu)
         sortMenu.addTarget(self, action: Selector("sortMenuClick"))
-        
         sortMenu.imageButton.image = "icon_sort";
         sortMenu.imageButton.highlightedImage = "icon_sort_highlighted"
         sortMenu.titleLabel.text = "排序"
-        
+           sortMenu.subtitleLabel.text = self.selectedSort?.label;
         self.navigationItem.leftBarButtonItems = [logoItem, categoryItem, regionItem, sortItem];
     }
     //    MARK: -leftItem Event
@@ -195,6 +206,7 @@ class HMDealsViewController: UICollectionViewController {
     /** 区域菜单 */
     func regionMenuClick(){
         var rs = regionPopover.contentViewController as! HMRegionsViewController
+        
         rs.selectedRegion = selectedRegion;
         rs.selectedSubRegionName = selectedSubRegionName;
         regionPopover.presentPopoverFromRect(regionMenu.bounds, inView: regionMenu, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
@@ -480,7 +492,7 @@ extension HMDealsViewController {
         // 弹出详情控制器
 
         var detailVc = HMDealDetailViewController(nibName: "HMDealDetailViewController", bundle: NSBundle.mainBundle())
-//        detailVc.view = NSBundle.mainBundle().loadNibNamed("HMDealDetailViewController", owner: detailVc, options: nil).last as!  UIView
+
         detailVc.deal = self.deals[indexPath.item]
 
         self.presentViewController(detailVc, animated: true, completion: nil)
