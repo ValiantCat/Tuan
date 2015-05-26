@@ -276,6 +276,7 @@ class HMDealsViewController: UICollectionViewController {
         var param = buildParam()
         //    // 2.加载数据
         HMDealTool.findDeals(param, success: { (result) -> Void in
+            if param != self.lastParam {return }
             //    // 清空之前的所有数据
             self.deals.removeAll(keepCapacity: false)
             for deal in result.deals {
@@ -401,8 +402,6 @@ class HMDealsViewController: UICollectionViewController {
         return AwesomeMenuItem(image: bg, highlightedImage: nil, contentImage: UIImage(named: content), highlightedContentImage: UIImage(named: highlightedContent))
     }
     
-    // MARK: UICollectionViewDataSource
-    
 }
 
 extension HMDealsViewController:AwesomeMenuDelegate {
@@ -445,7 +444,6 @@ extension HMDealsViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         layout(view.width, orientation: interfaceOrientation)
     }
     //        MARK:  - 处理屏幕的旋转
@@ -484,8 +482,6 @@ extension HMDealsViewController {
         // 设置cell与CollectionView边缘的间距
         layout.sectionInset = UIEdgeInsetsMake(lineSpacing, interitemSpacing, lineSpacing, interitemSpacing);
     }
-    
-    
 }
 extension HMDealsViewController: MJRefreshBaseViewDelegate {
     func refreshViewBeginRefreshing(refreshView: MJRefreshBaseView!) {
