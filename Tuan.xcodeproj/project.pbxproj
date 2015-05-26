@@ -13,6 +13,7 @@
 		CE008F0B1B062A9600E70BE0 /* HMCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE008F0A1B062A9600E70BE0 /* HMCategoriesViewController.swift */; };
 		CE008F141B06358800E70BE0 /* HMSortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE008F121B06358800E70BE0 /* HMSortsViewController.swift */; };
 		CE008F171B06380000E70BE0 /* HMSortsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE008F161B06380000E70BE0 /* HMSortsViewController.xib */; };
+		CE13E9701B145F55001BB54C /* HMRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13E96F1B145F55001BB54C /* HMRestriction.m */; };
 		CE249D131B0D613900F1CCC0 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE249D121B0D613900F1CCC0 /* NotificationCenter.swift */; };
 		CE2ADB211B130115003CA615 /* HMCenterLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB201B130115003CA615 /* HMCenterLineLabel.swift */; };
 		CE2ADB231B134449003CA615 /* SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB221B134449003CA615 /* SwiftDate.swift */; };
@@ -109,6 +110,8 @@
 		CE008F0A1B062A9600E70BE0 /* HMCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCategoriesViewController.swift; sourceTree = "<group>"; };
 		CE008F121B06358800E70BE0 /* HMSortsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSortsViewController.swift; sourceTree = "<group>"; };
 		CE008F161B06380000E70BE0 /* HMSortsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMSortsViewController.xib; sourceTree = "<group>"; };
+		CE13E96E1B145F55001BB54C /* HMRestriction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRestriction.h; sourceTree = "<group>"; };
+		CE13E96F1B145F55001BB54C /* HMRestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMRestriction.m; sourceTree = "<group>"; };
 		CE249D121B0D613900F1CCC0 /* NotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		CE2ADB201B130115003CA615 /* HMCenterLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCenterLineLabel.swift; sourceTree = "<group>"; };
 		CE2ADB221B134449003CA615 /* SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDate.swift; sourceTree = "<group>"; };
@@ -483,6 +486,8 @@
 				CEDD05541B0342290021BBAA /* HMGetSingleDealParam.m */,
 				CEDD05551B0342290021BBAA /* HMGetSingleDealResult.h */,
 				CEDD05561B0342290021BBAA /* HMGetSingleDealResult.m */,
+				CE13E96E1B145F55001BB54C /* HMRestriction.h */,
+				CE13E96F1B145F55001BB54C /* HMRestriction.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 				CE6878E91B05E86600764304 /* HMMetaDataTool.m in Sources */,
 				CEDD058D1B03706D0021BBAA /* AwesomeMenuItem.m in Sources */,
 				CEDD057B1B0342430021BBAA /* MJType.m in Sources */,
+				CE13E9701B145F55001BB54C /* HMRestriction.m in Sources */,
 				CE2ADB831B13526C003CA615 /* MJRefreshHeaderView.m in Sources */,
 				CEB06C8A1B07281500559D58 /* HMDropdownMenu.m in Sources */,
 				CEDD05751B0342430021BBAA /* MJArgument.m in Sources */,

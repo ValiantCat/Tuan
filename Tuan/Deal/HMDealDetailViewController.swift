@@ -10,12 +10,64 @@ import UIKit
 
 class HMDealDetailViewController: UIViewController {
 
-//    @property (nonatomic, weak) UIActivityIndicatorView *loadingView;
+
     @IBOutlet weak var webView: UIWebView!
     var loadingView:UIActivityIndicatorView?
+
+
+    @IBOutlet weak var refundableAnyTimeButton: UIButton!
+    @IBOutlet weak var refundableExpiresButton: UIButton!
+    @IBOutlet weak var leftTimeButton: UIButton!
+    @IBOutlet weak var purchaseCountButton: UIButton!
+    
     var deal:HMDeal?
+//    // label
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var currentPriceLabel: UILabel!
+    @IBOutlet weak var listPriceLabel: HMCenterLineLabel!
+    //    // 按钮
+    @IBAction func share() {
+        var alert = UIAlertController()
+        alert.addAction(UIAlertAction(title: "我没有搞分享  主要友盟更新太频繁了 分享经常不能用 ", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            
+        }))
+    }
+    @IBAction func collec() {
+    }
+    @IBAction func buy() {
+    }
+    @IBAction func back() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLeft()
+        updateLeftContent()
+        setupRight()
+    }
+    func setupLeft(){
+        // 更新左边内容
+        updateLeftContent()
+        // 加载更详细的团购数据
+        var param = HMGetSingleDealParam()
+        param.deal_id = deal?.deal_id
+        HMDealTool.getSingleDeal(param, success: { (result) -> Void in
+            if let deals = result.deals where result.deals.count >= 0 {
+                self.deal = deals.first as? HMDeal
+                // 更新左边的内容
+                self.updateLeftContent()
+            }else{
+              MBProgressHUD.showError("没有找到指定的团购信息")
+            }
+        }) { (error) -> Void in
+            MBProgressHUD.showError("加载团购数据失败")
+        }
+    }
+    /**
+    加载右侧webview
+    */
+    func setupRight(){
         self.view.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 230/255.0)
         self.webView.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 230/255.0)
         //    // 加载网页
@@ -23,14 +75,27 @@ class HMDealDetailViewController: UIViewController {
         webView.scrollView.hidden = true
         println(deal!.deal_h5_url)
         
-        //
         //    // 圈圈
         loadingView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
         webView.addSubview(loadingView!)
         loadingView?.startAnimating()
         loadingView?.autoCenterInSuperview()
     }
-
+    /**
+    更新左侧详情
+    */
+    func updateLeftContent(){
+        // 简单信息
+        self.titleLabel.text = self.deal?.title;
+        self.descLabel.text = self.deal?.desc;
+        self.currentPriceLabel.text = "￥\(self.deal!.current_price)"
+        self.listPriceLabel.text =  "门店价￥\( self.deal!.list_price)"
+         self.purchaseCountButton.title = "已售出\(self.deal!.purchase_count)"
+        if self.deal?.restrictions == nil {return }
+        self.refundableAnyTimeButton.selected = self.deal?.restrictions.is_refundable ?? false
+        self.refundableExpiresButton.selected = self.deal?.restrictions.is_refundable ?? false
+       
+    }
 
 }
 

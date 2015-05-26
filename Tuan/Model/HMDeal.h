@@ -7,7 +7,7 @@
 //  团购
 
 #import <Foundation/Foundation.h>
-
+#import "HMRestriction.h"
 @interface HMDeal : NSObject
 /** 团购单ID */
 @property (copy, nonatomic) NSString *deal_id;
@@ -19,10 +19,12 @@
 /** 城市名称，city为＂全国＂表示全国单，其他为本地单 */
 @property (copy, nonatomic) NSString *city;
 
+#pragma mark - 如果想让数字保持原来样子 用NSNumber
+
 /** 团购包含商品原价值 */
-@property (assign, nonatomic) float list_price;
+@property (strong, nonatomic) NSNumber *list_price;
 /** 团购价格 */
-@property (assign, nonatomic) float current_price;
+@property (strong, nonatomic) NSNumber *current_price;
 
 /**  团购适用商户所在行政区 NSString */
 @property (strong, nonatomic) NSArray *regions;
@@ -57,4 +59,6 @@
 @property (copy, nonatomic) NSString *details;
 /** 重要通知(一般为团购信息的临时变更) */
 @property (copy, nonatomic) NSString *notice;
+/** 限制条件 */
+@property (nonatomic, strong) HMRestriction *restrictions;
 @end

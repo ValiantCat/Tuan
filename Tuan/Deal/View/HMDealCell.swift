@@ -37,12 +37,12 @@ class HMDealCell: UICollectionViewCell {
             descLabel.text = newValue.desc
 
             // 现价
-            currentPriceLabel.text = String(format: "￥%.0f",newValue.current_price)
+            currentPriceLabel.text = String(format: "￥%@",newValue.current_price)
             // 1弥补小误差
 
 //            self.currentPriceWidth.constant = [self.currentPriceLabel.text sizeWithAttributes:@{NSFontAttributeName : self.currentPriceLabel.font}].width + 1;
             // 原价
-            listPriceLabel.text = String(format: "￥%.0f", newValue.list_price)
+            listPriceLabel.text = String(format: "￥%@", newValue.list_price)
             // 1弥补小误差
 //            self.listPriceWidth.constant = [self.listPriceLabel.text sizeWithAttributes:@{NSFontAttributeName : self.listPriceLabel.font}].width + 1;
             // 购买数
