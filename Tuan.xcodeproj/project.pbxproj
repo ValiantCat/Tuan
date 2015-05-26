@@ -22,6 +22,8 @@
 		CE2ADB811B13526C003CA615 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB7A1B13526C003CA615 /* MJRefreshConst.m */; };
 		CE2ADB821B13526C003CA615 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB7C1B13526C003CA615 /* MJRefreshFooterView.m */; };
 		CE2ADB831B13526C003CA615 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB7E1B13526C003CA615 /* MJRefreshHeaderView.m */; };
+		CE3B77071B14026B009A9670 /* HMDealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B77061B14026B009A9670 /* HMDealDetailViewController.swift */; };
+		CE3B77091B1402BC009A9670 /* HMDealDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3B77081B1402BC009A9670 /* HMDealDetailViewController.xib */; };
 		CE5C57861B0B38D600B817AE /* HMCitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C57851B0B38D600B817AE /* HMCitySearchViewController.swift */; };
 		CE5EE6771B1085EE006AF85A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5EE66E1B1085EE006AF85A /* ImageCache.swift */; };
 		CE5EE6781B1085EE006AF85A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5EE66F1B1085EE006AF85A /* ImageDownloader.swift */; };
@@ -121,6 +123,8 @@
 		CE2ADB7C1B13526C003CA615 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
 		CE2ADB7D1B13526C003CA615 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
 		CE2ADB7E1B13526C003CA615 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		CE3B77061B14026B009A9670 /* HMDealDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMDealDetailViewController.swift; sourceTree = "<group>"; };
+		CE3B77081B1402BC009A9670 /* HMDealDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMDealDetailViewController.xib; sourceTree = "<group>"; };
 		CE5C57851B0B38D600B817AE /* HMCitySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCitySearchViewController.swift; sourceTree = "<group>"; };
 		CE5EE66E1B1085EE006AF85A /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CE5EE66F1B1085EE006AF85A /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
@@ -526,6 +530,8 @@
 				CEA783DF1B09EB450071ED27 /* HMCitiesViewController.swift */,
 				CEA783E01B09EB450071ED27 /* HMCitiesViewController.xib */,
 				CE5C57851B0B38D600B817AE /* HMCitySearchViewController.swift */,
+				CE3B77081B1402BC009A9670 /* HMDealDetailViewController.xib */,
+				CE3B77061B14026B009A9670 /* HMDealDetailViewController.swift */,
 			);
 			path = Deal;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				CE9094B71B0D94E600EFD075 /* Main.storyboard in Resources */,
 				CE6878D31B05E55E00764304 /* categories.plist in Resources */,
 				CE2ADB7F1B13526C003CA615 /* MJRefresh.bundle in Resources */,
+				CE3B77091B1402BC009A9670 /* HMDealDetailViewController.xib in Resources */,
 				CE008F091B0629FD00E70BE0 /* HMDealsTopMenu.xib in Resources */,
 				CE008F171B06380000E70BE0 /* HMSortsViewController.xib in Resources */,
 				CE6878D61B05E55E00764304 /* sorts.plist in Resources */,
@@ -693,6 +700,7 @@
 				CEDD053E1B033AD60021BBAA /* DPAPI.m in Sources */,
 				CEDD05921B0374A50021BBAA /* UIView+AutoLayout.m in Sources */,
 				CEB06C911B072C6200559D58 /* HMRegionsViewController.swift in Sources */,
+				CE3B77071B14026B009A9670 /* HMDealDetailViewController.swift in Sources */,
 				CE008F031B06296B00E70BE0 /* UIButton+Extension.m in Sources */,
 				CEDD05151B033AB10021BBAA /* AppDelegate.swift in Sources */,
 				CEDD05791B0342430021BBAA /* MJMember.m in Sources */,

@@ -476,6 +476,15 @@ extension HMDealsViewController {
         // 设置cell与CollectionView边缘的间距
         layout.sectionInset = UIEdgeInsetsMake(lineSpacing, interitemSpacing, lineSpacing, interitemSpacing);
     }
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // 弹出详情控制器
+
+        var detailVc = HMDealDetailViewController(nibName: "HMDealDetailViewController", bundle: NSBundle.mainBundle())
+//        detailVc.view = NSBundle.mainBundle().loadNibNamed("HMDealDetailViewController", owner: detailVc, options: nil).last as!  UIView
+        detailVc.deal = self.deals[indexPath.item]
+
+        self.presentViewController(detailVc, animated: true, completion: nil)
+    }
 }
 extension HMDealsViewController: MJRefreshBaseViewDelegate {
     func refreshViewBeginRefreshing(refreshView: MJRefreshBaseView!) {

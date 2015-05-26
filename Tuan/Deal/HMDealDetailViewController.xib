@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMDealDetailViewController" customModule="Tuan" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="C5p-IR-aUi"/>
+                <outlet property="webView" destination="OkT-qT-foQ" id="0dt-KA-iy0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGt-Vb-koq">
+                    <rect key="frame" x="0.0" y="0.0" width="410" height="768"/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="410" id="d9q-Mv-5YE"/>
+                    </constraints>
+                </view>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkT-qT-foQ">
+                    <rect key="frame" x="440" y="20" width="554" height="748"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="I9H-76-N0m"/>
+                    </connections>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OkT-qT-foQ" firstAttribute="leading" secondItem="XGt-Vb-koq" secondAttribute="trailing" constant="30" id="0Nm-aw-ge6"/>
+                <constraint firstAttribute="bottom" secondItem="XGt-Vb-koq" secondAttribute="bottom" id="7i0-a5-PVA"/>
+                <constraint firstAttribute="bottom" secondItem="OkT-qT-foQ" secondAttribute="bottom" id="8Og-2N-5m0"/>
+                <constraint firstItem="XGt-Vb-koq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mz2-0n-05r"/>
+                <constraint firstAttribute="trailing" secondItem="OkT-qT-foQ" secondAttribute="trailing" constant="30" id="OKp-Cf-gyo"/>
+                <constraint firstItem="XGt-Vb-koq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nDU-gr-SoY"/>
+                <constraint firstItem="OkT-qT-foQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="vG2-3h-6Mo"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
