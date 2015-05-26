@@ -120,7 +120,7 @@ HMSingletonM(MetaDataTool)
     NSString *cityName = [self.selectedCityNames firstObject];
     HMCity *city = [self cityWithName:cityName];
     if (city == nil) {
-        city = [self cityWithName:@"广州"];
+        city = [self cityWithName:@"北京"];
     }
     return city;
 }
