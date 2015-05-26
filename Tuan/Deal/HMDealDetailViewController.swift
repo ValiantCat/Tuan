@@ -92,14 +92,12 @@ class HMDealDetailViewController: UIViewController {
         self.listPriceLabel.text =  "门店价￥\( self.deal!.list_price)"
          self.purchaseCountButton.title = "已售出\(self.deal!.purchase_count)"
         if self.deal?.restrictions == nil {
-        
             self.refundableAnyTimeButton.selected =   false
             self.refundableExpiresButton.selected = false
-            return
-        }
+        }else{
         self.refundableAnyTimeButton.selected = self.deal?.restrictions.is_refundable ?? false
         self.refundableExpiresButton.selected = self.deal?.restrictions.is_refundable ?? false
-       
+        }
     }
 
 }
