@@ -285,6 +285,7 @@ class HMDealsViewController: UICollectionViewController {
             self.collectionView?.reloadData()
             self.header.endRefreshing()
             }) { (error) -> Void in
+                if param != self.lastParam {return }
                 MBProgressHUD.showError("加载团购失败，请稍后再试")
                 self.header.endRefreshing()
         }
@@ -305,7 +306,6 @@ class HMDealsViewController: UICollectionViewController {
             for deal in result {
                 self.deals.append(deal as! HMDeal)
             }
-            //            [self.deals addObjectsFromArray:result.deals];
             // 刷新表格
             self.collectionView?.reloadData()
         }
@@ -322,12 +322,14 @@ class HMDealsViewController: UICollectionViewController {
             param.page = NSNumber(int: currentPage)
         }
         HMDealTool.findDeals(param, success: { (result) -> Void in
+            if param != self.lastParam {return }
             for deal in result.deals {
                 self.deals.append(deal as! HMDeal)
             }
             self.collectionView?.reloadData()
             self.footer.endRefreshing()
             }) { (error) -> Void in
+                if param != self.lastParam {return }
                 MBProgressHUD.showError("加载团购失败，请稍后再试")
                 //    // 结束刷新
                 self.footer.endRefreshing()
@@ -338,21 +340,6 @@ class HMDealsViewController: UICollectionViewController {
                 }
         }
         self.lastParam = param
-        //
-        //    // 2.加载数据
-        //    [HMDealTool findDeals:param success:^(HMFindDealsResult *result) {
-        //    // 添加新的数据
-        //    [self.deals addObjectsFromArray:result.deals];
-        //    // 刷新表格
-        //    [self.collectionView reloadData];
-        //    // 结束刷新
-        //    [self.collectionView footerEndRefreshing];
-        //    } failure:^(NSError *error) {
-        
-        //    }];
-        //
-        //    // 3.设置请求参数
-        //    self.lastParam = param;
     }
     
     
@@ -465,8 +452,6 @@ extension HMDealsViewController {
     :param: orientation 方向
     */
     func layout(totalWidth:CGFloat , orientation:UIInterfaceOrientation) {
-        
-        //    self.collectionViewLayout == self.collectionView.collectionViewLayout;
         // 总列数
         var  columns = CGFloat( UIInterfaceOrientationIsPortrait(orientation) ? 2 : 3)
         var layout = self.collectionViewLayout as! UICollectionViewFlowLayout
@@ -485,8 +470,6 @@ extension HMDealsViewController {
 }
 extension HMDealsViewController: MJRefreshBaseViewDelegate {
     func refreshViewBeginRefreshing(refreshView: MJRefreshBaseView!) {
-        //        collectionView?.addHeaderWithTarget(self, action: Selector("loadNewDeals"))
-        //        collectionView?.addFooterWithTarget(self, action: Selector("loadMoreDeals"))
         if refreshView === self.header {
             self.loadNewDeals()
         }else if refreshView === self.footer {
