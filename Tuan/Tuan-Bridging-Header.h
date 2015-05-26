@@ -27,6 +27,7 @@
 #import "HMCategory.h"
 #import "MBProgressHUD+MJ.h"
 #import "HMFindDealsParam.h"
+#import "HMFindDealsResult.h"
 #import "HMDealTool.h"
 #import "HMDeal.h"
 #import "MJRefresh.h"

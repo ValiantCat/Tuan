@@ -59,7 +59,7 @@ class HMDealsViewController: UICollectionViewController {
     lazy var emptyView:HMEmptyView = {
         var emp =  HMEmptyView(frame: CGRectZero)
         emp.image = UIImage(named: "icon_deals_empty")
-        self.view.addSubview(emp)
+        self.view.insertSubview(emp, belowSubview: self.collectionView!)
         return emp
         }()
     /** 请求参数 */
@@ -68,9 +68,14 @@ class HMDealsViewController: UICollectionViewController {
     var footer:MJRefreshFooterView!
     /// 团购数据
     var deals = [HMDeal]()
+    /** 存储请求结果的总数*/
+//    @property (nonatomic, assign) int totalNumber;
+    var totalNumber:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionView?.alwaysBounceHorizontal = true
+        collectionView?.alwaysBounceVertical = true
+        self.collectionView?.backgroundColor = UIColor.clearColor()
         setupMenu()
         setupNavLeft()
         setupNavRight()
@@ -277,6 +282,8 @@ class HMDealsViewController: UICollectionViewController {
         //    // 2.加载数据
         HMDealTool.findDeals(param, success: { (result) -> Void in
             if param != self.lastParam {return }
+            // 记录总数
+            self.totalNumber = Int(result.total_count)
             //    // 清空之前的所有数据
             self.deals.removeAll(keepCapacity: false)
             for deal in result.deals {
@@ -417,10 +424,12 @@ extension HMDealsViewController:AwesomeMenuDelegate {
 }
 //  MARK: - cell And Layout
 extension HMDealsViewController {
-    
+//    #warning 如果要在数据个数发生的改变时做出响应，那么响应操作可以考虑在数据源方法中实现
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //        #warning 控制emptyView的可见性
         self.emptyView.hidden = (self.deals.count > 0);
+        // 尾部控件的可见性
+        self.footer.hidden = (self.deals.count == self.totalNumber);
         return deals.count
     }
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
