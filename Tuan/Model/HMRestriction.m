@@ -7,7 +7,7 @@
 //
 
 #import "HMRestriction.h"
-
+#import "MJExtension.h"
 @implementation HMRestriction
-
+MJCodingImplementation
 @end

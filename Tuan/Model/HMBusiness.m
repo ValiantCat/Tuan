@@ -7,10 +7,11 @@
 //
 
 #import "HMBusiness.h"
-
+#import "MJExtension.h"
 @implementation HMBusiness
 - (NSDictionary *)replacedKeyFromPropertyName
 {
     return @{@"ID" : @"id"};
 }
+MJCodingImplementation
 @end

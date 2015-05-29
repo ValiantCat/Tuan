@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMDealDetailViewController" customModule="Tuan" customModuleProvider="target">
             <connections>
+                <outlet property="collectButton" destination="KGS-QM-foR" id="SUf-th-iEi"/>
                 <outlet property="currentPriceLabel" destination="sAe-WR-vP5" id="Vuc-se-I5N"/>
                 <outlet property="descLabel" destination="8kx-ov-GpY" id="Qgo-Gz-tIp"/>
                 <outlet property="listPriceLabel" destination="rhH-rC-SsY" id="2Lz-qz-JQJ"/>

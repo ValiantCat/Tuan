@@ -15,6 +15,7 @@ class HMDealDetailViewController: UIViewController {
     var loadingView:UIActivityIndicatorView?
 
 
+    @IBOutlet weak var collectButton: UIButton!
     @IBOutlet weak var refundableAnyTimeButton: UIButton!
     @IBOutlet weak var refundableExpiresButton: UIButton!
     @IBOutlet weak var leftTimeButton: UIButton!
@@ -34,6 +35,17 @@ class HMDealDetailViewController: UIViewController {
         }))
     }
     @IBAction func collec() {
+        if (self.collectButton.selected) {
+            HMDealLocalTool.sharedDealLocalTool().unsaveCollectDeal(deal!)
+            MBProgressHUD.showSuccess("取消收藏成功！")
+
+            self.collectButton.selected = false
+        } else {
+            HMDealLocalTool.sharedDealLocalTool().saveCollectDeal(deal!)
+            MBProgressHUD.showSuccess("收藏成功！")
+            self.collectButton.selected = true
+            
+        }
     }
     @IBAction func buy() {
     }
@@ -42,6 +54,13 @@ class HMDealDetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        保存最近浏览记录
+        HMDealLocalTool.sharedDealLocalTool().saveHistoryDeal(deal)
+
+        // 判断是否收藏
+        var collectDeals = HMDealLocalTool.sharedDealLocalTool().collectDeals
+        collectButton.selected = collectDeals.containsObject(deal!)
+
         setupLeft()
         updateLeftContent()
         setupRight()

@@ -34,4 +34,5 @@
 #import "MJRefresh.h"
 #import "HMGetSingleDealResult.h"
 #import "HMRestriction.h"
+#import "HMDealLocalTool.h"
 #endif

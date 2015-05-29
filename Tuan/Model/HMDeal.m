@@ -20,4 +20,10 @@
     // 模型的desc属性对应着字典中的description
     return @{@"desc" : @"description"};
 }
+#warning  重写isequal方法 保证在缓存时不会缓存内容重复 但是内存地址不同的model
+- (BOOL)isEqual:(HMDeal *)other
+{
+    return [self.deal_id isEqualToString:other.deal_id];
+}
+MJCodingImplementation
 @end

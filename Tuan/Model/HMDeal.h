@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "HMRestriction.h"
+#import "MJExtension.h"
+
 @interface HMDeal : NSObject
+
 /** 团购单ID */
 @property (copy, nonatomic) NSString *deal_id;
 /** 团购标题 */
@@ -61,4 +64,7 @@
 @property (copy, nonatomic) NSString *notice;
 /** 限制条件 */
 @property (nonatomic, strong) HMRestriction *restrictions;
+//状态表示
+@property (nonatomic, assign, getter = isEditing) BOOL editing;
+@property (nonatomic, assign, getter = isChecking) BOOL checking;
 @end

@@ -23,7 +23,21 @@ class HMNavigationController: UINavigationController {
     
     override class func initialize(){
     UINavigationBar.appearance().setBackgroundImage(UIImage(named: "bg_navigationBar_normal")!, forBarMetrics: UIBarMetrics.Default)
+
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor(red: 29/255.0, green: 177/157.0, blue: 157/255.0, alpha: 1.0)], forState: UIControlState.Normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor(red: 210/255.0, green: 210/157.0, blue: 210/255.0, alpha: 1.0)], forState: UIControlState.Disabled)
+        
     
+    }
+    override init(rootViewController: UIViewController) {
+        super.init(rootViewController: rootViewController)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
 }

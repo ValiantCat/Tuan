@@ -13,8 +13,9 @@ class HMEmptyView: UIImageView {
     
     override func didMoveToWindow() {
         // 填充整个父控件
-
+        if superview != nil {
         autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
+        }
     }
     override init(frame: CGRect) {
         super.init(frame: frame)

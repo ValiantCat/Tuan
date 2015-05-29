@@ -9,7 +9,7 @@
 import UIKit
 
 
-class HMDealsViewController: UICollectionViewController {
+class HMDealsViewController: HMDealListViewController {
     //MARK: -  顶部菜单
     /** 分类菜单 */
     var categoryMenu:HMDealsTopMenu!
@@ -52,22 +52,12 @@ class HMDealsViewController: UICollectionViewController {
         return UIPopoverController(contentViewController:         HMSortsViewController(nibName: "HMSortsViewController", bundle: NSBundle.mainBundle()))
         }()
     
-    
-    
-    //    /** 没有数据时显示的view */
-    
-    lazy var emptyView:HMEmptyView = {
-        var emp =  HMEmptyView(frame: CGRectZero)
-        emp.image = UIImage(named: "icon_deals_empty")
-        self.view.insertSubview(emp, belowSubview: self.collectionView!)
-        return emp
-        }()
     /** 请求参数 */
     var   lastParam:HMFindDealsParam?
     var  header:MJRefreshHeaderView!
     var footer:MJRefreshFooterView!
     /// 团购数据
-    var deals = [HMDeal]()
+
     /** 存储请求结果的总数*/
 
     var totalNumber:Int = 0
@@ -80,9 +70,7 @@ class HMDealsViewController: UICollectionViewController {
         rs.regions = (selectedCity.regions as? [HMRegion] ) ?? nil  ;
 
         }
-//        collectionView?.alwaysBounceHorizontal = true
-        collectionView?.alwaysBounceVertical = true
-        self.collectionView?.backgroundColor = UIColor.clearColor()
+
         setupMenu()
         setupNavLeft()
         setupNavRight()
@@ -297,7 +285,7 @@ class HMDealsViewController: UICollectionViewController {
             // 记录总数
             self.totalNumber = Int(result.total_count)
             //    // 清空之前的所有数据
-            self.deals.removeAll(keepCapacity: false)
+                self.deals.removeAll(keepCapacity: false)
             for deal in result.deals {
                 self.deals.append(deal as! HMDeal)
             }
@@ -316,6 +304,7 @@ class HMDealsViewController: UICollectionViewController {
     /**
     加载新数据
     */
+    #if false
     func loadXXXNewDeals(){
         HMDealTool.loadNewDeals(selectedCity, selectSort: selectedSort, selectedCategory: selectedCategory, selectedRegion: selectedRegion, selectedSubCategoryName: selectedSubCategoryName, selectedSubRegionName: selectedSubRegionName) { (result) -> Void in
             // 清空之前的所有数据
@@ -329,6 +318,7 @@ class HMDealsViewController: UICollectionViewController {
             self.collectionView?.reloadData()
         }
     }
+    #endif
     /**
     加载更多
     */
@@ -429,8 +419,16 @@ extension HMDealsViewController:AwesomeMenuDelegate {
         })
     }
     func awesomeMenu(menu: AwesomeMenu!, didSelectIndex idx: Int) {
-        
         awesomeMenuWillAnimateClose(menu)
+        if (idx == 1) { // 收藏
+            let collec = HMCollectViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            var nav = HMNavigationController(rootViewController: collec)
+            presentViewController(nav, animated: true, completion: nil)
+        } else if (idx == 2) { // 浏览记录
+            let history = HMHistoryViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            var nav = HMNavigationController(rootViewController: history)
+            presentViewController(nav, animated: true, completion: nil)
+        }
     }
     
 }
@@ -438,65 +436,11 @@ extension HMDealsViewController:AwesomeMenuDelegate {
 extension HMDealsViewController {
 //    #warning 如果要在数据个数发生的改变时做出响应，那么响应操作可以考虑在数据源方法中实现
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        #warning 控制emptyView的可见性
-        self.emptyView.hidden = (self.deals.count > 0);
         // 尾部控件的可见性
         self.footer.hidden = (self.deals.count == self.totalNumber);
-        return deals.count
+        return super.collectionView(collectionView, numberOfItemsInSection: section)
     }
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("deal", forIndexPath: indexPath) as! HMDealCell
-        cell.deal = deals[indexPath.row]
-        return cell;
-        
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        layout(view.width, orientation: interfaceOrientation)
-    }
-    //        MARK:  - 处理屏幕的旋转
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        //        #warning 这里要注意：由于是即将旋转，最后的宽度就是现在的高度
-        // 总宽度
-        
-        var  totalWidth = self.view.height;
-        
-        layout(totalWidth, orientation: toInterfaceOrientation)
-    }
-    //    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-    //        super.didRotateFromInterfaceOrientation(fromInterfaceOrientation)
-    //    }
-    /**
-    调整布局
-    
-    :param: titalWidth  总宽度
-    :param: orientation 方向
-    */
-    func layout(totalWidth:CGFloat , orientation:UIInterfaceOrientation) {
-        // 总列数
-        var  columns = CGFloat( UIInterfaceOrientationIsPortrait(orientation) ? 2 : 3)
-        var layout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        // 每一行的最小间距
-        var lineSpacing:CGFloat = 25
-        // 每一列的最小间距
-        
-        var  interitemSpacing = ( totalWidth - columns * layout.itemSize.width) / (columns + 1);
-        
-        layout.minimumInteritemSpacing = interitemSpacing;
-        layout.minimumLineSpacing = lineSpacing;
-        // 设置cell与CollectionView边缘的间距
-        layout.sectionInset = UIEdgeInsetsMake(lineSpacing, interitemSpacing, lineSpacing, interitemSpacing);
-    }
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        // 弹出详情控制器
 
-        var detailVc = HMDealDetailViewController(nibName: "HMDealDetailViewController", bundle: NSBundle.mainBundle())
-
-        detailVc.deal = self.deals[indexPath.item]
-
-        self.presentViewController(detailVc, animated: true, completion: nil)
-    }
 }
 extension HMDealsViewController: MJRefreshBaseViewDelegate {
     func refreshViewBeginRefreshing(refreshView: MJRefreshBaseView!) {
@@ -508,7 +452,11 @@ extension HMDealsViewController: MJRefreshBaseViewDelegate {
     }
     
 }
-
-
+//MARK: - emptyView ICON
+extension HMDealsViewController {
+    override func emptyIcon() -> String {
+        return "icon_deals_empty"
+    }
+}
 
 

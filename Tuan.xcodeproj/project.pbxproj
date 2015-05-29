@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0039C71B1890C4004CC20E /* HMDealLocalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0039C61B1890C4004CC20E /* HMDealLocalListViewController.swift */; };
+		CE0039C91B1895B6004CC20E /* HMCollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0039C81B1895B6004CC20E /* HMCollectViewController.swift */; };
 		CE008F031B06296B00E70BE0 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008F021B06296B00E70BE0 /* UIButton+Extension.m */; };
 		CE008F081B0629FD00E70BE0 /* HMDealsTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008F061B0629FD00E70BE0 /* HMDealsTopMenu.m */; };
 		CE008F091B0629FD00E70BE0 /* HMDealsTopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE008F071B0629FD00E70BE0 /* HMDealsTopMenu.xib */; };
@@ -15,6 +17,10 @@
 		CE008F171B06380000E70BE0 /* HMSortsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE008F161B06380000E70BE0 /* HMSortsViewController.xib */; };
 		CE13E9701B145F55001BB54C /* HMRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13E96F1B145F55001BB54C /* HMRestriction.m */; };
 		CE249D131B0D613900F1CCC0 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE249D121B0D613900F1CCC0 /* NotificationCenter.swift */; };
+		CE25A31D1B17526A00653319 /* HMDealLocalTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE25A31C1B17526A00653319 /* HMDealLocalTool.m */; };
+		CE25A3211B175D2100653319 /* HMDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE25A3201B175D2100653319 /* HMDealCell.xib */; };
+		CE25A3231B175D8B00653319 /* HMDealListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25A3221B175D8B00653319 /* HMDealListViewController.swift */; };
+		CE25A3261B17653A00653319 /* HMHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25A3251B17653A00653319 /* HMHistoryViewController.swift */; };
 		CE2ADB211B130115003CA615 /* HMCenterLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB201B130115003CA615 /* HMCenterLineLabel.swift */; };
 		CE2ADB231B134449003CA615 /* SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB221B134449003CA615 /* SwiftDate.swift */; };
 		CE2ADB251B1345F6003CA615 /* HMEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADB241B1345F6003CA615 /* HMEmptyView.swift */; };
@@ -46,7 +52,6 @@
 		CE6878E61B05E5FA00764304 /* HMSort.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6878E11B05E5FA00764304 /* HMSort.m */; };
 		CE6878E91B05E86600764304 /* HMMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6878E81B05E86600764304 /* HMMetaDataTool.m */; };
 		CE6878EC1B05F0AE00764304 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6878EB1B05F0AE00764304 /* UIBarButtonItem+Extension.m */; };
-		CE9094B71B0D94E600EFD075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD05181B033AB10021BBAA /* Main.storyboard */; };
 		CEA783E11B09EB450071ED27 /* HMCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA783DF1B09EB450071ED27 /* HMCitiesViewController.swift */; };
 		CEA783E21B09EB450071ED27 /* HMCitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA783E01B09EB450071ED27 /* HMCitiesViewController.xib */; };
 		CEB06C891B07281500559D58 /* HMDropdownMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB06C831B07281500559D58 /* HMDropdownMainCell.m */; };
@@ -102,6 +107,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0039C61B1890C4004CC20E /* HMDealLocalListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMDealLocalListViewController.swift; sourceTree = "<group>"; };
+		CE0039C81B1895B6004CC20E /* HMCollectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCollectViewController.swift; sourceTree = "<group>"; };
 		CE008F011B06296B00E70BE0 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		CE008F021B06296B00E70BE0 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		CE008F051B0629FD00E70BE0 /* HMDealsTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDealsTopMenu.h; sourceTree = "<group>"; };
@@ -113,6 +120,11 @@
 		CE13E96E1B145F55001BB54C /* HMRestriction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRestriction.h; sourceTree = "<group>"; };
 		CE13E96F1B145F55001BB54C /* HMRestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMRestriction.m; sourceTree = "<group>"; };
 		CE249D121B0D613900F1CCC0 /* NotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		CE25A31B1B17526A00653319 /* HMDealLocalTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDealLocalTool.h; sourceTree = "<group>"; };
+		CE25A31C1B17526A00653319 /* HMDealLocalTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDealLocalTool.m; sourceTree = "<group>"; };
+		CE25A3201B175D2100653319 /* HMDealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMDealCell.xib; sourceTree = "<group>"; };
+		CE25A3221B175D8B00653319 /* HMDealListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMDealListViewController.swift; sourceTree = "<group>"; };
+		CE25A3251B17653A00653319 /* HMHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMHistoryViewController.swift; sourceTree = "<group>"; };
 		CE2ADB201B130115003CA615 /* HMCenterLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCenterLineLabel.swift; sourceTree = "<group>"; };
 		CE2ADB221B134449003CA615 /* SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDate.swift; sourceTree = "<group>"; };
 		CE2ADB241B1345F6003CA615 /* HMEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmptyView.swift; sourceTree = "<group>"; };
@@ -171,7 +183,6 @@
 		CEDD050F1B033AB10021BBAA /* Tuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD05131B033AB10021BBAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDD05141B033AB10021BBAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEDD05191B033AB10021BBAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEDD051B1B033AB10021BBAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEDD051E1B033AB10021BBAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEDD05241B033AB10021BBAA /* TuanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +287,7 @@
 				CE008F071B0629FD00E70BE0 /* HMDealsTopMenu.xib */,
 				CE2ADB201B130115003CA615 /* HMCenterLineLabel.swift */,
 				CE2ADB241B1345F6003CA615 /* HMEmptyView.swift */,
+				CE25A3201B175D2100653319 /* HMDealCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +298,34 @@
 				CE249D121B0D613900F1CCC0 /* NotificationCenter.swift */,
 			);
 			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		CE25A3191B1751D200653319 /* UserPrefrence */ = {
+			isa = PBXGroup;
+			children = (
+				CE25A3241B17651C00653319 /* VC */,
+				CE25A31A1B17526A00653319 /* Tool */,
+			);
+			path = UserPrefrence;
+			sourceTree = "<group>";
+		};
+		CE25A31A1B17526A00653319 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CE25A31B1B17526A00653319 /* HMDealLocalTool.h */,
+				CE25A31C1B17526A00653319 /* HMDealLocalTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		CE25A3241B17651C00653319 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CE25A3251B17653A00653319 /* HMHistoryViewController.swift */,
+				CE0039C61B1890C4004CC20E /* HMDealLocalListViewController.swift */,
+				CE0039C81B1895B6004CC20E /* HMCollectViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		CE2ADB741B13526C003CA615 /* MJRefresh */ = {
@@ -370,6 +410,7 @@
 		CEDD05111B033AB10021BBAA /* Tuan */ = {
 			isa = PBXGroup;
 			children = (
+				CE25A3191B1751D200653319 /* UserPrefrence */,
 				CE5EE66D1B1085EE006AF85A /* Kingfisher */,
 				CE249D111B0D60EF00F1CCC0 /* NotificationCenter */,
 				CEDD05841B036EB30021BBAA /* NAV */,
@@ -378,7 +419,6 @@
 				CEDD05351B033AD60021BBAA /* Cateogry */,
 				CEDD05371B033AD60021BBAA /* Lib */,
 				CEDD05341B033ABF0021BBAA /* Tool */,
-				CEDD05181B033AB10021BBAA /* Main.storyboard */,
 				CEDD051B1B033AB10021BBAA /* Images.xcassets */,
 				CEDD051D1B033AB10021BBAA /* LaunchScreen.xib */,
 				CEDD05121B033AB10021BBAA /* Supporting Files */,
@@ -537,6 +577,7 @@
 				CE5C57851B0B38D600B817AE /* HMCitySearchViewController.swift */,
 				CE3B77081B1402BC009A9670 /* HMDealDetailViewController.xib */,
 				CE3B77061B14026B009A9670 /* HMDealDetailViewController.swift */,
+				CE25A3221B175D8B00653319 /* HMDealListViewController.swift */,
 			);
 			path = Deal;
 			sourceTree = "<group>";
@@ -652,7 +693,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9094B71B0D94E600EFD075 /* Main.storyboard in Resources */,
 				CE6878D31B05E55E00764304 /* categories.plist in Resources */,
 				CE2ADB7F1B13526C003CA615 /* MJRefresh.bundle in Resources */,
 				CE3B77091B1402BC009A9670 /* HMDealDetailViewController.xib in Resources */,
@@ -662,6 +702,7 @@
 				CEE93F971B0DEF7D00B36EDD /* MBProgressHUD.bundle in Resources */,
 				CEB06C8B1B07281500559D58 /* HMDropdownMenu.xib in Resources */,
 				CE6878D41B05E55E00764304 /* cities.plist in Resources */,
+				CE25A3211B175D2100653319 /* HMDealCell.xib in Resources */,
 				CEDD051C1B033AB10021BBAA /* Images.xcassets in Resources */,
 				CE6878D51B05E55E00764304 /* cityGroups.plist in Resources */,
 				CEA783E21B09EB450071ED27 /* HMCitiesViewController.xib in Resources */,
@@ -691,6 +732,7 @@
 				CEDD05571B0342290021BBAA /* HMBusiness.m in Sources */,
 				CEDD05861B036EC00021BBAA /* HMNavigationController.swift in Sources */,
 				CE249D131B0D613900F1CCC0 /* NotificationCenter.swift in Sources */,
+				CE0039C71B1890C4004CC20E /* HMDealLocalListViewController.swift in Sources */,
 				CE5C57861B0B38D600B817AE /* HMCitySearchViewController.swift in Sources */,
 				CE5EE6801B108AE9006AF85A /* HMDealCell.swift in Sources */,
 				CEE93F981B0DEF7D00B36EDD /* MBProgressHUD.m in Sources */,
@@ -713,13 +755,16 @@
 				CE5EE67B1B1085EE006AF85A /* KingfisherOptions.swift in Sources */,
 				CEDD05761B0342430021BBAA /* MJConst.m in Sources */,
 				CE008F141B06358800E70BE0 /* HMSortsViewController.swift in Sources */,
+				CE25A3261B17653A00653319 /* HMHistoryViewController.swift in Sources */,
 				CE2ADB231B134449003CA615 /* SwiftDate.swift in Sources */,
 				CEDD05931B0374A50021BBAA /* UIView+Extension.m in Sources */,
 				CEDD057D1B0342430021BBAA /* NSObject+MJCoding.m in Sources */,
 				CEDD05491B0342150021BBAA /* HMDealTool.m in Sources */,
 				CEDD057C1B0342430021BBAA /* MJTypeEncoding.m in Sources */,
 				CE008F081B0629FD00E70BE0 /* HMDealsTopMenu.m in Sources */,
+				CE25A3231B175D8B00653319 /* HMDealListViewController.swift in Sources */,
 				CE5EE67A1B1085EE006AF85A /* KingfisherManager.swift in Sources */,
+				CE25A31D1B17526A00653319 /* HMDealLocalTool.m in Sources */,
 				CEDD05461B033DC30021BBAA /* Test.m in Sources */,
 				CE6878E21B05E5FA00764304 /* HMCategory.m in Sources */,
 				CE6878E61B05E5FA00764304 /* HMSort.m in Sources */,
@@ -750,6 +795,7 @@
 				CEDD05421B033AEC0021BBAA /* HMAPITool.m in Sources */,
 				CEDD05591B0342290021BBAA /* HMFindDealsParam.m in Sources */,
 				CE5EE67D1B1085EE006AF85A /* UIImage+Decode.swift in Sources */,
+				CE0039C91B1895B6004CC20E /* HMCollectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,14 +818,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CEDD05181B033AB10021BBAA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEDD05191B033AB10021BBAA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CEDD051D1B033AB10021BBAA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

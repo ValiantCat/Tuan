@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HMDropdownMenu.h"
-@interface HMCategory : NSObject <HMDropdownMenuItem>
+@interface HMCategory : NSObject <HMDropdownMenuItem,NSCoding>
 /** 类别名称 */
 @property (copy, nonatomic) NSString *name;
 /** 大图标 */
