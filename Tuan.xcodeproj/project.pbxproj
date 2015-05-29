@@ -184,7 +184,6 @@
 		CEDD05131B033AB10021BBAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDD05141B033AB10021BBAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEDD051B1B033AB10021BBAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CEDD051E1B033AB10021BBAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEDD05241B033AB10021BBAA /* TuanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD05291B033AB10021BBAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDD052A1B033AB10021BBAA /* TuanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuanTests.swift; sourceTree = "<group>"; };
@@ -420,7 +419,6 @@
 				CEDD05371B033AD60021BBAA /* Lib */,
 				CEDD05341B033ABF0021BBAA /* Tool */,
 				CEDD051B1B033AB10021BBAA /* Images.xcassets */,
-				CEDD051D1B033AB10021BBAA /* LaunchScreen.xib */,
 				CEDD05121B033AB10021BBAA /* Supporting Files */,
 			);
 			path = Tuan;
@@ -817,17 +815,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		CEDD051D1B033AB10021BBAA /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEDD051E1B033AB10021BBAA /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		CEDD052C1B033AB10021BBAA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -916,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Tuan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -928,6 +916,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Tuan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

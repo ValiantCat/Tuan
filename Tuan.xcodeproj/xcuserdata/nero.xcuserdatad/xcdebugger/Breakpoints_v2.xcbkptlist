@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tuan/Deal/HMDealDetailViewController.swift"
-            timestampString = "454601337.281015"
+            timestampString = "454604826.319543"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "updateLeftContent()"
             landmarkType = "5">
          </BreakpointContent>

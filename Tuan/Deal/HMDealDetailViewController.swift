@@ -29,10 +29,12 @@ class HMDealDetailViewController: UIViewController {
     @IBOutlet weak var listPriceLabel: HMCenterLineLabel!
     //    // 按钮
     @IBAction func share() {
-        var alert = UIAlertController()
-        alert.addAction(UIAlertAction(title: "我没有搞分享  主要友盟更新太频繁了 分享经常不能用 ", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+        var alert = UIAlertController(title: "💗", message: "我没有搞分享  主要友盟更新太频繁了 分享经常不能用", preferredStyle: UIAlertControllerStyle.Alert)
+
+        alert.addAction(UIAlertAction(title: "寒哥, 我知道错了 ", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             
         }))
+        presentViewController(alert, animated: true, completion: nil)
     }
     @IBAction func collec() {
         if (self.collectButton.selected) {
@@ -117,6 +119,28 @@ class HMDealDetailViewController: UIViewController {
         self.refundableAnyTimeButton.selected = self.deal?.restrictions.is_refundable ?? false
         self.refundableExpiresButton.selected = self.deal?.restrictions.is_refundable ?? false
         }
+        
+        
+        /*
+        // 剩余时间处理
+        // 当前时间 2014-08-27 09:06
+        NSDate *now = [NSDate date];
+        // 过期时间 2014-08-28 00:00
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        fmt.dateFormat = @"yyyy-MM-dd";
+        NSDate *deadTime = [[fmt dateFromString:self.deal.purchase_deadline] dateByAddingTimeInterval:24 * 3600];
+        // 比较2个时间的差距
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
+        NSDateComponents *cmps = [calendar components:unit fromDate:now toDate:deadTime options:0];
+        if (cmps.day > 365) {
+        self.leftTimeButton.title = @"一年内不过期";
+        } else {
+        self.leftTimeButton.title = [NSString stringWithFormat:@"%d天%d小时%d分", cmps.day, cmps.hour, cmps.minute];
+        }
+        */
+        
+        
     }
 
 }
