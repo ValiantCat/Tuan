@@ -124,7 +124,18 @@ HMSingletonM(MetaDataTool)
     }
     return city;
 }
-
+- (HMCategory *)categoryWithName:(NSString *)name
+{
+    for (HMCategory *category in self.categories) {
+        if ([category.name isEqualToString:name]) return category;
+        
+        // 遍历子类别
+        for (NSString *subcategory in category.subcategories) {
+            if ([subcategory isEqualToString:name]) return category;
+        }
+    }
+    return nil;
+}
 - (HMSort *)selectedSort
 {
     HMSort *sort = [NSKeyedUnarchiver unarchiveObjectWithFile:HMSelectedSortFile];

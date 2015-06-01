@@ -25,6 +25,8 @@
 		<string>icon_filter_category_highlighted_1</string>
 		<key>small_icon</key>
 		<string>icon_filter_category_1</string>
+		<key>map_icon</key>
+		<string>ic_category_1</string>
 		<key>subcategories</key>
 		<array>
 			<string>全部</string>
@@ -71,6 +73,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_20</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_20</string>
 		<key>icon</key>
@@ -97,6 +101,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_99</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_99</string>
 		<key>icon</key>
@@ -109,6 +115,8 @@
 		<string>icon_filter_category_99</string>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_2</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_2</string>
 		<key>icon</key>
@@ -139,6 +147,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_3</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_3</string>
 		<key>icon</key>
@@ -172,6 +182,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_3</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_3</string>
 		<key>icon</key>
@@ -204,6 +216,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_22</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_22</string>
 		<key>icon</key>
@@ -229,6 +243,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_78</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_78</string>
 		<key>icon</key>
@@ -241,6 +257,8 @@
 		<string>icon_filter_category_78</string>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_4</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_4</string>
 		<key>icon</key>
@@ -267,6 +285,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>map_icon</key>
+		<string>ic_category_5</string>
 		<key>highlighted_icon</key>
 		<string>icon_category_highlighted_5</string>
 		<key>icon</key>

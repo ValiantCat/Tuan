@@ -24,7 +24,7 @@ class HMCategoriesViewController: UIViewController {
     /** 当前选中的分类 */
     var selectedCategory:HMCategory! {
         willSet {
-                 if newValue == nil {return }
+                 if newValue == nil  || menu == nil {return }
             var itemsNSArray = NSArray(array: menu.items)
             let index = itemsNSArray.indexOfObject(newValue)
             menu.selectMain(Int32(index))

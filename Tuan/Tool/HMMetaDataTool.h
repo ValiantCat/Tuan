@@ -10,6 +10,7 @@
 #import "HMSingleton.h"
 #import "HMCity.h"
 #import "HMSort.h"
+#import "HMCategory.h"
 @interface HMMetaDataTool : NSObject
 HMSingletonH(MetaDataTool)
 /**
@@ -31,6 +32,12 @@ HMSingletonH(MetaDataTool)
 - (HMCity *)cityWithName:(NSString *)name;
 
 
+
+
+/**
+ *  通过分类名称（子分类名称）获得对应的分类模型
+ */
+- (HMCategory * )categoryWithName:(NSString *)name;
 
 
 

@@ -151,6 +151,8 @@ class HMDealsViewController: HMDealListViewController {
     
     deinit{
         HMNotificationCenter.removeObserver(self)
+        self.footer = nil
+        self.header = nil 
     }
     /**
     *  设置导航栏左边的内容
@@ -229,14 +231,20 @@ class HMDealsViewController: HMDealListViewController {
     *  搜索
     */
     func searchClick() {
+        var searchVc = HMSearchViewController(collectionViewLayout: UICollectionViewLayout())
         
+        searchVc.selectedCity = self.selectedCity;
+        var nav = HMNavigationController(rootViewController: searchVc)
+        presentViewController(nav, animated: true, completion: nil)
+
     }
     
     /**
     *  地图
     */
     func mapClick(){
-        
+     var nav = HMNavigationController(rootViewController: HMMapViewController())
+        presentViewController(nav , animated: true, completion: nil)
     }
     /**
     封装请求参数

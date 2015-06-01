@@ -21,4 +21,7 @@
 @property (copy, nonatomic) NSString *small_highlighted_icon;
 /** 子类别 */
 @property (strong, nonatomic) NSArray *subcategories;
+
+/** 这种类别显示在地图上的大头针图标 */
+@property (nonatomic, copy) NSString *map_icon;
 @end

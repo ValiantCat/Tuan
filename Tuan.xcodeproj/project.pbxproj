@@ -41,7 +41,6 @@
 		CE5EE67D1B1085EE006AF85A /* UIImage+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5EE6751B1085EE006AF85A /* UIImage+Decode.swift */; };
 		CE5EE67E1B1085EE006AF85A /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5EE6761B1085EE006AF85A /* UIImageView+Kingfisher.swift */; };
 		CE5EE6801B108AE9006AF85A /* HMDealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5EE67F1B108AE9006AF85A /* HMDealCell.swift */; };
-		CE6878D31B05E55E00764304 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6878CF1B05E55E00764304 /* categories.plist */; };
 		CE6878D41B05E55E00764304 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6878D01B05E55E00764304 /* cities.plist */; };
 		CE6878D51B05E55E00764304 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6878D11B05E55E00764304 /* cityGroups.plist */; };
 		CE6878D61B05E55E00764304 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6878D21B05E55E00764304 /* sorts.plist */; };
@@ -52,6 +51,12 @@
 		CE6878E61B05E5FA00764304 /* HMSort.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6878E11B05E5FA00764304 /* HMSort.m */; };
 		CE6878E91B05E86600764304 /* HMMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6878E81B05E86600764304 /* HMMetaDataTool.m */; };
 		CE6878EC1B05F0AE00764304 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6878EB1B05F0AE00764304 /* UIBarButtonItem+Extension.m */; };
+		CE7F53CF1B1C214F006624BB /* HMSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F53CE1B1C214F006624BB /* HMSearchViewController.swift */; };
+		CE7F53DB1B1C7DF7006624BB /* HMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F53D31B1C7DF7006624BB /* HMMapViewController.m */; };
+		CE7F53DC1B1C7DF7006624BB /* HMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7F53D41B1C7DF7006624BB /* HMMapViewController.xib */; };
+		CE7F53DD1B1C7DF7006624BB /* HMDealAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F53D71B1C7DF7006624BB /* HMDealAnnotation.m */; };
+		CE7F53DE1B1C7DF7006624BB /* HMDealAnnoRightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F53DA1B1C7DF7006624BB /* HMDealAnnoRightButton.m */; };
+		CE7F53E01B1C8433006624BB /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE7F53DF1B1C8433006624BB /* categories.plist */; };
 		CEA783E11B09EB450071ED27 /* HMCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA783DF1B09EB450071ED27 /* HMCitiesViewController.swift */; };
 		CEA783E21B09EB450071ED27 /* HMCitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA783E01B09EB450071ED27 /* HMCitiesViewController.xib */; };
 		CEB06C891B07281500559D58 /* HMDropdownMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB06C831B07281500559D58 /* HMDropdownMainCell.m */; };
@@ -60,6 +65,7 @@
 		CEB06C8C1B07281500559D58 /* HMDropdownSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB06C881B07281500559D58 /* HMDropdownSubCell.m */; };
 		CEB06C911B072C6200559D58 /* HMRegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB06C8F1B072C6200559D58 /* HMRegionsViewController.swift */; };
 		CEB06C921B072C6200559D58 /* HMRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB06C901B072C6200559D58 /* HMRegionsViewController.xib */; };
+		CEBAB90F1B1C886F005A5D1F /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = CEBAB90E1B1C886F005A5D1F /* 1.gif */; };
 		CEDD05151B033AB10021BBAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD05141B033AB10021BBAA /* AppDelegate.swift */; };
 		CEDD051C1B033AB10021BBAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDD051B1B033AB10021BBAA /* Images.xcassets */; };
 		CEDD052B1B033AB10021BBAA /* TuanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD052A1B033AB10021BBAA /* TuanTests.swift */; };
@@ -151,7 +157,6 @@
 		CE5EE6751B1085EE006AF85A /* UIImage+Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decode.swift"; sourceTree = "<group>"; };
 		CE5EE6761B1085EE006AF85A /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		CE5EE67F1B108AE9006AF85A /* HMDealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMDealCell.swift; sourceTree = "<group>"; };
-		CE6878CF1B05E55E00764304 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
 		CE6878D01B05E55E00764304 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		CE6878D11B05E55E00764304 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		CE6878D21B05E55E00764304 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
@@ -169,6 +174,15 @@
 		CE6878E81B05E86600764304 /* HMMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMetaDataTool.m; sourceTree = "<group>"; };
 		CE6878EA1B05F0AE00764304 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		CE6878EB1B05F0AE00764304 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		CE7F53CE1B1C214F006624BB /* HMSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSearchViewController.swift; sourceTree = "<group>"; };
+		CE7F53D21B1C7DF7006624BB /* HMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMapViewController.h; sourceTree = "<group>"; };
+		CE7F53D31B1C7DF7006624BB /* HMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMapViewController.m; sourceTree = "<group>"; };
+		CE7F53D41B1C7DF7006624BB /* HMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMMapViewController.xib; sourceTree = "<group>"; };
+		CE7F53D61B1C7DF7006624BB /* HMDealAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDealAnnotation.h; sourceTree = "<group>"; };
+		CE7F53D71B1C7DF7006624BB /* HMDealAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDealAnnotation.m; sourceTree = "<group>"; };
+		CE7F53D91B1C7DF7006624BB /* HMDealAnnoRightButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDealAnnoRightButton.h; sourceTree = "<group>"; };
+		CE7F53DA1B1C7DF7006624BB /* HMDealAnnoRightButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDealAnnoRightButton.m; sourceTree = "<group>"; };
+		CE7F53DF1B1C8433006624BB /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
 		CEA783DF1B09EB450071ED27 /* HMCitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCitiesViewController.swift; sourceTree = "<group>"; };
 		CEA783E01B09EB450071ED27 /* HMCitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMCitiesViewController.xib; sourceTree = "<group>"; };
 		CEB06C821B07281500559D58 /* HMDropdownMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDropdownMainCell.h; sourceTree = "<group>"; };
@@ -180,6 +194,7 @@
 		CEB06C881B07281500559D58 /* HMDropdownSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDropdownSubCell.m; sourceTree = "<group>"; };
 		CEB06C8F1B072C6200559D58 /* HMRegionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMRegionsViewController.swift; sourceTree = "<group>"; };
 		CEB06C901B072C6200559D58 /* HMRegionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMRegionsViewController.xib; sourceTree = "<group>"; };
+		CEBAB90E1B1C886F005A5D1F /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
 		CEDD050F1B033AB10021BBAA /* Tuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD05131B033AB10021BBAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDD05141B033AB10021BBAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -363,7 +378,7 @@
 		CE6878CE1B05E55E00764304 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				CE6878CF1B05E55E00764304 /* categories.plist */,
+				CE7F53DF1B1C8433006624BB /* categories.plist */,
 				CE6878D01B05E55E00764304 /* cities.plist */,
 				CE6878D11B05E55E00764304 /* cityGroups.plist */,
 				CE6878D21B05E55E00764304 /* sorts.plist */,
@@ -388,6 +403,52 @@
 			path = MetaData;
 			sourceTree = "<group>";
 		};
+		CE7F53CD1B1C2141006624BB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CE7F53CE1B1C214F006624BB /* HMSearchViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		CE7F53D01B1C7DF7006624BB /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CE7F53D11B1C7DF7006624BB /* Controller */,
+				CE7F53D51B1C7DF7006624BB /* Model */,
+				CE7F53D81B1C7DF7006624BB /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		CE7F53D11B1C7DF7006624BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE7F53D21B1C7DF7006624BB /* HMMapViewController.h */,
+				CE7F53D31B1C7DF7006624BB /* HMMapViewController.m */,
+				CE7F53D41B1C7DF7006624BB /* HMMapViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE7F53D51B1C7DF7006624BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE7F53D61B1C7DF7006624BB /* HMDealAnnotation.h */,
+				CE7F53D71B1C7DF7006624BB /* HMDealAnnotation.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE7F53D81B1C7DF7006624BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE7F53D91B1C7DF7006624BB /* HMDealAnnoRightButton.h */,
+				CE7F53DA1B1C7DF7006624BB /* HMDealAnnoRightButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CEDD05061B033AB10021BBAA = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +470,8 @@
 		CEDD05111B033AB10021BBAA /* Tuan */ = {
 			isa = PBXGroup;
 			children = (
+				CE7F53D01B1C7DF7006624BB /* Map */,
+				CE7F53CD1B1C2141006624BB /* Search */,
 				CE25A3191B1751D200653319 /* UserPrefrence */,
 				CE5EE66D1B1085EE006AF85A /* Kingfisher */,
 				CE249D111B0D60EF00F1CCC0 /* NotificationCenter */,
@@ -427,6 +490,7 @@
 		CEDD05121B033AB10021BBAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEBAB90E1B1C886F005A5D1F /* 1.gif */,
 				CE6878CE1B05E55E00764304 /* JSON */,
 				CEDD05141B033AB10021BBAA /* AppDelegate.swift */,
 				CEDD05131B033AB10021BBAA /* Info.plist */,
@@ -691,7 +755,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6878D31B05E55E00764304 /* categories.plist in Resources */,
+				CE7F53E01B1C8433006624BB /* categories.plist in Resources */,
 				CE2ADB7F1B13526C003CA615 /* MJRefresh.bundle in Resources */,
 				CE3B77091B1402BC009A9670 /* HMDealDetailViewController.xib in Resources */,
 				CE008F091B0629FD00E70BE0 /* HMDealsTopMenu.xib in Resources */,
@@ -701,9 +765,11 @@
 				CEB06C8B1B07281500559D58 /* HMDropdownMenu.xib in Resources */,
 				CE6878D41B05E55E00764304 /* cities.plist in Resources */,
 				CE25A3211B175D2100653319 /* HMDealCell.xib in Resources */,
+				CE7F53DC1B1C7DF7006624BB /* HMMapViewController.xib in Resources */,
 				CEDD051C1B033AB10021BBAA /* Images.xcassets in Resources */,
 				CE6878D51B05E55E00764304 /* cityGroups.plist in Resources */,
 				CEA783E21B09EB450071ED27 /* HMCitiesViewController.xib in Resources */,
+				CEBAB90F1B1C886F005A5D1F /* 1.gif in Resources */,
 				CEB06C921B072C6200559D58 /* HMRegionsViewController.xib in Resources */,
 				CE5EE6791B1085EE006AF85A /* Info.plist in Resources */,
 			);
@@ -748,6 +814,7 @@
 				CE3B77071B14026B009A9670 /* HMDealDetailViewController.swift in Sources */,
 				CE008F031B06296B00E70BE0 /* UIButton+Extension.m in Sources */,
 				CEDD05151B033AB10021BBAA /* AppDelegate.swift in Sources */,
+				CE7F53CF1B1C214F006624BB /* HMSearchViewController.swift in Sources */,
 				CEDD05791B0342430021BBAA /* MJMember.m in Sources */,
 				CEB06C8C1B07281500559D58 /* HMDropdownSubCell.m in Sources */,
 				CE5EE67B1B1085EE006AF85A /* KingfisherOptions.swift in Sources */,
@@ -758,6 +825,7 @@
 				CEDD05931B0374A50021BBAA /* UIView+Extension.m in Sources */,
 				CEDD057D1B0342430021BBAA /* NSObject+MJCoding.m in Sources */,
 				CEDD05491B0342150021BBAA /* HMDealTool.m in Sources */,
+				CE7F53DB1B1C7DF7006624BB /* HMMapViewController.m in Sources */,
 				CEDD057C1B0342430021BBAA /* MJTypeEncoding.m in Sources */,
 				CE008F081B0629FD00E70BE0 /* HMDealsTopMenu.m in Sources */,
 				CE25A3231B175D8B00653319 /* HMDealListViewController.swift in Sources */,
@@ -774,11 +842,13 @@
 				CE5EE6771B1085EE006AF85A /* ImageCache.swift in Sources */,
 				CE6878EC1B05F0AE00764304 /* UIBarButtonItem+Extension.m in Sources */,
 				CEDD05781B0342430021BBAA /* MJIvar.m in Sources */,
+				CE7F53DD1B1C7DF7006624BB /* HMDealAnnotation.m in Sources */,
 				CE2ADB211B130115003CA615 /* HMCenterLineLabel.swift in Sources */,
 				CEE93F961B0DEF7D00B36EDD /* MBProgressHUD+MJ.m in Sources */,
 				CE2ADB821B13526C003CA615 /* MJRefreshFooterView.m in Sources */,
 				CEDD057F1B0342430021BBAA /* NSObject+MJMember.m in Sources */,
 				CE2ADB801B13526C003CA615 /* MJRefreshBaseView.m in Sources */,
+				CE7F53DE1B1C7DF7006624BB /* HMDealAnnoRightButton.m in Sources */,
 				CE2ADB811B13526C003CA615 /* MJRefreshConst.m in Sources */,
 				CEDD05581B0342290021BBAA /* HMDeal.m in Sources */,
 				CEDD055C1B0342290021BBAA /* HMGetSingleDealResult.m in Sources */,

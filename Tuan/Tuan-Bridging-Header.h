@@ -35,4 +35,5 @@
 #import "HMGetSingleDealResult.h"
 #import "HMRestriction.h"
 #import "HMDealLocalTool.h"
+#import "HMMapViewController.h"
 #endif
