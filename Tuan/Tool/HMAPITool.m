@@ -21,6 +21,7 @@ HMSingletonM(APITool)
 {
     if (_api == nil) {
         self.api = [[DPAPI alloc] init];
+        
     }
     return _api;
 }

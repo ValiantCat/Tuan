@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+		</dict>
+		<key>Pods-Tuan.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+		</dict>
+		<key>SwiftDate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>91A2E2ECD5DEC4CFC5CA3A66EC69F8CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>948AFF32AF3681A0EAA27546B37AFB4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7DE8891FE30F11C00D3F6910A03362E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

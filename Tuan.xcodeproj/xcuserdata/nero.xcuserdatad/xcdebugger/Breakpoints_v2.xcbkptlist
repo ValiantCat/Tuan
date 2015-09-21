@@ -21,6 +21,8 @@
             continueAfterRunningActions = "No"
             symbolName = "objc_execption_throw"
             moduleName = "">
+            <Locations>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

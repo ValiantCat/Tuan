@@ -11,30 +11,32 @@ private struct HMTextStatus {
  static let  HMEditText = "编辑"
  static  let HMDoneText = "完成"
 }
-class HMDealLocalListViewController: HMDealListViewController {
+class HMDealLocalListViewController:HMDealListViewController {
 //    MARK: - init
     override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
     }
-    
-    required init(coder aDecoder: NSCoder) {
+
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+
 // MARK:    items
     lazy var backItem:UIBarButtonItem = {
         var item = UIBarButtonItem(imageName: "icon_back", highImageName: "icon_back_highlighted", target: self, action: Selector("back"))
         return item
         }()
     lazy var selectAllItem:UIBarButtonItem  = {
-        var item = UIBarButtonItem(title: "   全选   ", style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("selectAll"))
+        var item = UIBarButtonItem(title: "   全选   ", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("selectAll"))
             return item
         }()
     lazy var unselectAllItem:UIBarButtonItem = {
-        var item = UIBarButtonItem(title: "   全不选   ", style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("unselectAll"))
+        var item = UIBarButtonItem(title: "   全不选   ", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("unselectAll"))
         return item
-        }()
+        }() 
     lazy var deleteItem:UIBarButtonItem = {
-        var item = UIBarButtonItem(title: "   删除   ", style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("delete"))
+        var item = UIBarButtonItem(title: "   删除   ", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("delete"))
         item.enabled = false
         return item
         }()
@@ -78,7 +80,7 @@ class HMDealLocalListViewController: HMDealListViewController {
     *  编辑 或者完成
     */
     func edit(){
-        var title = navigationItem.rightBarButtonItem?.title
+        let title = navigationItem.rightBarButtonItem?.title
         if title == HMTextStatus.HMEditText {
             navigationItem.rightBarButtonItem?.title = HMTextStatus.HMDoneText
             for deal in deals {
@@ -116,7 +118,7 @@ class HMDealLocalListViewController: HMDealListViewController {
                 deal.editing = false
             }
         }
-        var dealsNS = NSMutableArray(array: deals)
+        let dealsNS = NSMutableArray(array: deals)
         dealsNS.removeObjectsInArray(checkingDeals)
         //waning 这里有错
         self.deals = NSArray(array: dealsNS) as! [(HMDeal)]
@@ -140,9 +142,6 @@ class HMDealLocalListViewController: HMDealListViewController {
             deal.checking = false
         }
     }
-}
-extension HMDealLocalListViewController:HMDealCellDelegate {
-    
     override func dealCellDidClickCover(dealCell: HMDealCell?) {
         var deleteEnable = false
         var checkingCount = 0
@@ -158,7 +157,10 @@ extension HMDealLocalListViewController:HMDealCellDelegate {
         if checkingCount > 0 {
             deleteItem.title = "  删除\(checkingCount)  "
         }else{
-                deleteItem.title = "    删除    "
+            deleteItem.title = "    删除    "
         }
     }
 }
+//extension HMDealLocalListViewController : HMDealCellDelegate {
+
+//}

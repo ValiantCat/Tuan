@@ -20,13 +20,13 @@ class HMDealListViewController: UICollectionViewController {
     override init(collectionViewLayout layout: UICollectionViewLayout) {
 
         // cell的尺寸
-        var layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSizeMake(305, 305);
 
         super.init(collectionViewLayout: layout)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
   
@@ -80,7 +80,7 @@ class HMDealListViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // 弹出详情控制器
         
-        var detailVc = HMDealDetailViewController(nibName: "HMDealDetailViewController", bundle: NSBundle.mainBundle())
+        let detailVc = HMDealDetailViewController(nibName: "HMDealDetailViewController", bundle: NSBundle.mainBundle())
         
         detailVc.deal = self.deals[indexPath.item]
         
@@ -95,7 +95,7 @@ class HMDealListViewController: UICollectionViewController {
         //        #warning 这里要注意：由于是即将旋转，最后的宽度就是现在的高度
         // 总宽度
         
-        var  totalWidth = self.view.height;
+        let  totalWidth = self.view.height;
         
         layout(totalWidth, orientation: toInterfaceOrientation)
     }
@@ -105,19 +105,19 @@ class HMDealListViewController: UICollectionViewController {
     /**
     调整布局
     
-    :param: titalWidth  总宽度
-    :param: orientation 方向
+    - parameter titalWidth:  总宽度
+    - parameter orientation: 方向
     */
     func layout(totalWidth:CGFloat , orientation:UIInterfaceOrientation) {
         // 总列数
-        var  columns = CGFloat( UIInterfaceOrientationIsPortrait(orientation) ? 2 : 3)
-        var layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        let  columns = CGFloat( UIInterfaceOrientationIsPortrait(orientation) ? 2 : 3)
+        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
         
         // 每一行的最小间距
-        var lineSpacing:CGFloat = 25
+        let lineSpacing:CGFloat = 25
         // 每一列的最小间距
         
-        var  interitemSpacing = ( totalWidth - columns * layout.itemSize.width) / (columns + 1);
+        let  interitemSpacing = ( totalWidth - columns * layout.itemSize.width) / (columns + 1);
         
         layout.minimumInteritemSpacing = interitemSpacing;
         layout.minimumLineSpacing = lineSpacing;
@@ -129,6 +129,6 @@ class HMDealListViewController: UICollectionViewController {
 }
 extension HMDealListViewController:HMDealCellDelegate{
     func dealCellDidClickCover(dealCell: HMDealCell?) {
-        println("super Class do Noting ")
+        print("super Class do Noting ")
     }
 }

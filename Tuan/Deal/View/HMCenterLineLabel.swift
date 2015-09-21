@@ -16,10 +16,10 @@ class HMCenterLineLabel: UILabel {
 
             textColor.set()
         // 矩形框的值
-        var  x:CGFloat = 0;
-        var  y:CGFloat = self.height * 0.5;
-        var  w = self.width;
-        var  h:CGFloat = 0.5;
+        let  x:CGFloat = 0;
+        let  y:CGFloat = self.height * 0.5;
+        let  w = self.width;
+        let  h:CGFloat = 0.5;
         UIRectFill(CGRectMake(x, y, w, h));
     }
 }

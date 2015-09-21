@@ -12,10 +12,12 @@ class HMHistoryViewController:HMDealLocalListViewController {
     override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
     }
-    
-    required init(coder aDecoder: NSCoder) {
+
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "浏览记录"
@@ -24,7 +26,7 @@ class HMHistoryViewController:HMDealLocalListViewController {
         super.viewWillAppear(animated)
         // 刷新数据（保持顺序）
         deals.removeAll(keepCapacity: true)
-        var historyDeals = HMDealLocalTool.sharedDealLocalTool().historyDeals
+        let historyDeals = HMDealLocalTool.sharedDealLocalTool().historyDeals
         for deal in historyDeals {
             deals.append(deal as! HMDeal )
         }
@@ -36,7 +38,7 @@ class HMHistoryViewController:HMDealLocalListViewController {
         return "icon_latestBrowse_empty"
     }
 
-
+    
     
     /**
     *  删除

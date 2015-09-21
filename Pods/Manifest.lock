@@ -1,0 +1,13 @@
+PODS:
+  - Kingfisher (1.6.0)
+  - SwiftDate (1.0.11)
+
+DEPENDENCIES:
+  - Kingfisher (~> 1.6)
+  - SwiftDate
+
+SPEC CHECKSUMS:
+  Kingfisher: 3308d487e5c2a0fba9c1054fc3b8c45923e03c40
+  SwiftDate: c2fdcd66c327c799749a435a05521b20a4074009
+
+COCOAPODS: 0.38.2

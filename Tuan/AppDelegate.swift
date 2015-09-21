@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        var detslVc = HMDealsViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        var nav = HMNavigationController(rootViewController: detslVc)
+        let detslVc = HMDealsViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let nav = HMNavigationController(rootViewController: detslVc)
 
         window?.backgroundColor = UIColor.whiteColor()
         window?.rootViewController = nav

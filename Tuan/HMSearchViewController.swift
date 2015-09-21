@@ -24,7 +24,7 @@ class HMSearchViewController: HMDealListViewController {
             // 左边的返回
             navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "icon_back", highImageName: "icon_back_highlighted", target: self, action: Selector("back"))
             // 中间的搜索框
-            var titleView = UIView(frame: CGRectZero)
+            let titleView = UIView(frame: CGRectZero)
             titleView.height = 30
             titleView.width = 400
             navigationItem.titleView = titleView
@@ -54,10 +54,12 @@ class HMSearchViewController: HMDealListViewController {
         self.searchBar.userInteractionEnabled = false
         
         //        //        // 1.请求参数
-        var param = HMFindDealsParam()
+        let param = HMFindDealsParam()
         //        // 关键词
         param.keyword = searchBar.text
-        
+        var x  = 0
+        let operantion:String?
+//        = operantion.lastPathComponent
         //        // 城市
         param.city = self.selectedCity?.name
         
@@ -85,10 +87,12 @@ class HMSearchViewController: HMDealListViewController {
     override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
     }
-    
-    required init(coder aDecoder: NSCoder) {
+
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+
     
     override func emptyIcon() -> String {
         return "icon_deals_empty"
@@ -112,7 +116,7 @@ extension HMSearchViewController:UISearchBarDelegate {
         
         
         //        // 1.请求参数
-        var param = HMFindDealsParam()
+        let param = HMFindDealsParam()
         //        // 关键词
         param.keyword = searchBar.text
         

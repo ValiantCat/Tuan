@@ -20,7 +20,7 @@ class HMCollectViewController: HMDealLocalListViewController {
         
         // 刷新数据（保持顺序）
         deals.removeAll(keepCapacity: true)
-        var collectDeals = HMDealLocalTool.sharedDealLocalTool().collectDeals
+        let collectDeals = HMDealLocalTool.sharedDealLocalTool().collectDeals
         for deal in collectDeals {
             deals.append(deal as! HMDeal )
         }
@@ -33,10 +33,12 @@ class HMCollectViewController: HMDealLocalListViewController {
     override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
     }
-    
-    required init(coder aDecoder: NSCoder) {
+
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+
     
     override func emptyIcon() -> String {
             return "icon_collects_empty"

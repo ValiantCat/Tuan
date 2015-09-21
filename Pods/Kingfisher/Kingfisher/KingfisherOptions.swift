@@ -29,28 +29,32 @@ import Foundation
 /**
 *  Options to control Kingfisher behaviors.
 */
-public struct KingfisherOptions : RawOptionSetType {
-    typealias RawValue = UInt
-    private var value: UInt = 0
-    init(_ value: UInt) { self.value = value }
-    public init(rawValue value: UInt) { self.value = value }
-    public init(nilLiteral: ()) { self.value = 0 }
-    public static var allZeros: KingfisherOptions { return self(0) }
-    static func fromMask(raw: UInt) -> KingfisherOptions { return self(raw) }
-    public var rawValue: UInt { return self.value }
+public struct KingfisherOptions : OptionSetType {
+
+    public let rawValue: UInt
+    
+    public init(rawValue: UInt) {
+        self.rawValue = rawValue
+    }
     
     /// None options. Kingfisher will keep its default behavior.
-    public static var None: KingfisherOptions { return self(0) }
+    public static let None = KingfisherOptions(rawValue: 0)
     
     /// Download in a low priority.
-    public static var LowPriority: KingfisherOptions { return KingfisherOptions(1 << 0) }
+    public static let LowPriority = KingfisherOptions(rawValue: 1 << 0)
     
-    /// Ignore cache. Always download the image and cache it again.
-    public static var ForceRefresh: KingfisherOptions { return KingfisherOptions(1 << 1) }
+    /// Try to send request to server first. If response code is 304 (Not Modified), use the cached image. Otherwise, download the image and cache it again.
+    public static var ForceRefresh = KingfisherOptions(rawValue: 1 << 1)
     
     /// Only cache downloaded image to memory, not cache in disk.
-    public static var CacheMemoryOnly: KingfisherOptions { return KingfisherOptions(1 << 2) }
+    public static var CacheMemoryOnly = KingfisherOptions(rawValue: 1 << 2)
     
     /// Decode the image in background thread before using.
-    public static var BackgroundDecode: KingfisherOptions { return KingfisherOptions(1 << 3) }
+    public static var BackgroundDecode = KingfisherOptions(rawValue: 1 << 3)
+
+    /// If set it will dispatch callbacks asynchronously to the global queue DISPATCH_QUEUE_PRIORITY_DEFAULT. Otherwise it will use the queue defined at KingfisherManager.DefaultOptions.queue
+    public static var BackgroundCallback = KingfisherOptions(rawValue: 1 << 4)
+    
+    /// Decode the image using the same scale as the main screen. Otherwise it will use the same scale as defined on the KingfisherManager.DefaultOptions.scale.
+    public static var ScreenScale = KingfisherOptions(rawValue: 1 << 5)
 }

@@ -22,12 +22,12 @@ class HMSortButton:UIButton {
         self.titleColor = UIColor.blackColor()
         self.selectedTitleColor = UIColor.whiteColor()
     }
-    
-    required init(coder aDecoder: NSCoder) {
+
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+
     
 }
 
@@ -39,15 +39,15 @@ class HMSortsViewController: UIViewController {
         self.preferredContentSize = self.view.size;
         
         // 根据排序模型的个数，创建对应的按钮
-        var buttonX:CGFloat = 20.0
-        var buttonW = view.width - 2 * buttonX
-        var buttonP:CGFloat = 15
+        let buttonX:CGFloat = 20.0
+        let buttonW = view.width - 2 * buttonX
+        let buttonP:CGFloat = 15
         var sorts =  HMMetaDataTool.sharedMetaDataTool().sorts as! Array<HMSort>
 
         var contentH:CGFloat = 0
         for i in 0 ..< sorts.count {
             // 创建按钮
-            var button = HMSortButton(frame: CGRectZero)
+            let button = HMSortButton(frame: CGRectZero)
             // 取出模型
             button.sort = sorts[i]
 
@@ -62,7 +62,7 @@ class HMSortsViewController: UIViewController {
             contentH = button.maxX + buttonP
         }
         //        // 设置contentSize
-        var scrollview = self.view as! UIScrollView
+        let scrollview = self.view as! UIScrollView
         scrollview.contentSize = CGSize(width: 0, height: contentH)
     }
     func sortButtonClick(button:HMSortButton) {
@@ -79,7 +79,7 @@ class HMSortsViewController: UIViewController {
         willSet {
 //
             if newValue == nil {return }
-            var subview = self.view.subviews as! [UIView]
+            let subview = self.view.subviews 
             for button in subview{
                 if let sortButton = button as? HMSortButton {
                     if sortButton.sort == newValue {

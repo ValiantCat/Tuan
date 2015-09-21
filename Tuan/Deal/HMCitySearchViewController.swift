@@ -27,24 +27,24 @@ class HMCitySearchViewController: UITableViewController {
     var searchText:String! {
         willSet{
             // 根据搜索条件进行过滤
-            var allCities = HMMetaDataTool.sharedMetaDataTool().cities as! Array<HMCity>
+            let allCities = HMMetaDataTool.sharedMetaDataTool().cities as! Array<HMCity>
             // 将搜索条件转为小写
-            var lowerSearchText = newValue.lowercaseString
+            let lowerSearchText = newValue.lowercaseString
 
             let pre = NSPredicate(format: "name.lowercaseString contains %@ or pinYin.lowercaseString contains %@ or pinYinHead.lowercaseString contains %@", lowerSearchText,lowerSearchText,lowerSearchText)
-            var allnsarray = NSArray(array: allCities)
-            var resultNSArray = allnsarray.filteredArrayUsingPredicate(pre)
+            let allnsarray = NSArray(array: allCities)
+            let resultNSArray = allnsarray.filteredArrayUsingPredicate(pre)
             resultCities = resultNSArray as! Array<HMCity>
             self.tableView.reloadData()
             
         }
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellId) as? UITableViewCell
+        var cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellId) 
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellId)
         }
-        var city = resultCities[indexPath.row]
+        let city = resultCities[indexPath.row]
         cell.textLabel?.text = city.name
         return cell
     }
@@ -57,7 +57,7 @@ class HMCitySearchViewController: UITableViewController {
         dismissViewControllerAnimated(true, completion: nil)
         // 2.发出通知
 
-        var city = resultCities[indexPath.row]
+        let city = resultCities[indexPath.row]
         HMNotificationCenter.postNotificationName(HMCityNotification.HMCityDidSelectNotification, object: nil, userInfo: [HMCityNotification.HMSelectedCity :city])
 
     }

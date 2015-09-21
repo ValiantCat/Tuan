@@ -29,7 +29,7 @@ class HMDealDetailViewController: UIViewController {
     @IBOutlet weak var listPriceLabel: HMCenterLineLabel!
     //    // 按钮
     @IBAction func share() {
-        var alert = UIAlertController(title: "💗", message: "我没有搞分享  主要友盟更新太频繁了 分享经常不能用", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "💗", message: "我没有搞分享  主要友盟更新太频繁了 分享经常不能用", preferredStyle: UIAlertControllerStyle.Alert)
 
         alert.addAction(UIAlertAction(title: "寒哥, 我知道错了 ", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             
@@ -56,11 +56,12 @@ class HMDealDetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.whiteColor()
 //        保存最近浏览记录
         HMDealLocalTool.sharedDealLocalTool().saveHistoryDeal(deal)
 
         // 判断是否收藏
-        var collectDeals = HMDealLocalTool.sharedDealLocalTool().collectDeals
+        let collectDeals = HMDealLocalTool.sharedDealLocalTool().collectDeals
         collectButton.selected = collectDeals.containsObject(deal!)
 
         setupLeft()
@@ -71,7 +72,7 @@ class HMDealDetailViewController: UIViewController {
         // 更新左边内容
         updateLeftContent()
         // 加载更详细的团购数据
-        var param = HMGetSingleDealParam()
+        let param = HMGetSingleDealParam()
         param.deal_id = deal?.deal_id
         HMDealTool.getSingleDeal(param, success: { (result) -> Void in
             if let deals = result.deals where result.deals.count >= 0 {
@@ -94,7 +95,7 @@ class HMDealDetailViewController: UIViewController {
         //    // 加载网页
         webView.loadRequest(NSURLRequest(URL: NSURL(string: deal!.deal_h5_url)!))
         webView.scrollView.hidden = true
-        println(deal!.deal_h5_url)
+        print(deal!.deal_h5_url, terminator: "")
         
         //    // 圈圈
         loadingView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
@@ -157,7 +158,7 @@ extension HMDealDetailViewController:UIWebViewDelegate {
         urlStr = "http://m.dianping.com/tuan/deal/\(id)"
 
         //
-        var webViewURL = webView.request?.URL?.absoluteString!
+        let webViewURL = webView.request?.URL?.absoluteString
         if webViewURL == urlStr {
             var js = ""
             js = ("\(js) var bodyHTML = ';'")
@@ -171,7 +172,7 @@ extension HMDealDetailViewController:UIWebViewDelegate {
             js = ("\(js)  if (div) { bodyHTML += div.outerHTML; }")
             js = ("\(js) }")
             //    // 设置body的内容
-            js.stringByAppendingString("document.body.innerHTML = bodyHTML;")
+            js = js.stringByAppendingString("document.body.innerHTML = bodyHTML;")
             //    // 执行JS代码
             webView.stringByEvaluatingJavaScriptFromString(js)
             //    // 显示网页内容
@@ -181,15 +182,18 @@ extension HMDealDetailViewController:UIWebViewDelegate {
 
         }else{
             //    } else { // 加载初始网页完毕
-            var js = "window.location.href = '\(urlStr)';"
+            let js = "window.location.href = '\(urlStr)';"
             //    // 执行JS代码
             webView.stringByEvaluatingJavaScriptFromString(js)
         }
         
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return UIInterfaceOrientation.Unknown.rawValue
+//    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+    
+//    }
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+         return UIInterfaceOrientationMask.All
     }
 }
 

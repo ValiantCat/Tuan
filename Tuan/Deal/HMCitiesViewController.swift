@@ -99,42 +99,42 @@ extension HMCitiesViewController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var group = cityGroups[section]
+        let group = cityGroups[section]
         return group.cities.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell! =  tableView.dequeueReusableCellWithIdentifier(cellId) as? UITableViewCell
+        var cell:UITableViewCell! =  tableView.dequeueReusableCellWithIdentifier(cellId) 
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellId)
         }
         
-        var group = cityGroups[indexPath.section]
+        let group = cityGroups[indexPath.section]
 
-        var title = group.cities[indexPath.row] as! String
+        let title = group.cities[indexPath.row] as! String
         cell.textLabel?.text = title
         return cell
     }
 
 
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var group = cityGroups[section]
+        let group = cityGroups[section]
         return group.title
     }
     //    // Shift + Control + 单击 == 查看在xib\storyboard中重叠的所有UI控件
-    func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
+    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]! {
         //    // 将cityGroups数组中所有元素的title属性值取出来，放到一个新的数组
         //    return [self.cityGroups valueForKeyPath:@"title"];
-        var citysNSArray = NSArray(array: cityGroups)
-        return citysNSArray.valueForKeyPath("title") as! Array<AnyObject>
+        let citysNSArray = NSArray(array: cityGroups)
+        return citysNSArray.valueForKeyPath("title") as! [String]
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         dismissViewControllerAnimated(true, completion: nil)
         // 2.发出通知
 
-        var group = cityGroups[indexPath.section]
-        var cityName = group.cities[indexPath.row] as! String
-        var city = HMMetaDataTool.sharedMetaDataTool().cityWithName(cityName)
+        let group = cityGroups[indexPath.section]
+        let cityName = group.cities[indexPath.row] as! String
+        let city = HMMetaDataTool.sharedMetaDataTool().cityWithName(cityName)
 
 
         HMNotificationCenter.postNotificationName(HMCityNotification.HMCityDidSelectNotification, object: nil, userInfo: [HMCityNotification.HMSelectedCity:city])

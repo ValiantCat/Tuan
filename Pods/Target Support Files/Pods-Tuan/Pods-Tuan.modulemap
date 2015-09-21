@@ -1,0 +1,6 @@
+framework module Pods_Tuan {
+  umbrella header "Pods-Tuan-umbrella.h"
+
+  export *
+  module * { export * }
+}

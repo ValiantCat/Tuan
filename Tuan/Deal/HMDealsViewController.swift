@@ -65,7 +65,7 @@ class HMDealsViewController: HMDealListViewController {
         super.viewDidLoad()
         selectedSort = HMMetaDataTool.sharedMetaDataTool().selectedSort()
         selectedCity = HMMetaDataTool.sharedMetaDataTool().selectedCity()
-        var rs = regionPopover.contentViewController as! HMRegionsViewController
+        let rs = regionPopover.contentViewController as! HMRegionsViewController
         if selectedCity != nil {
         rs.regions = (selectedCity.regions as? [HMRegion] ) ?? nil  ;
 
@@ -97,10 +97,10 @@ class HMDealsViewController: HMDealListViewController {
         var dict = noti.userInfo as! [String:HMCity]
         selectedCity = dict[HMCityNotification.HMSelectedCity]
         selectedRegion = selectedCity.regions.first as! HMRegion
-        regionMenu.titleLabel.text = selectedCity?.name.stringByAppendingString(" - 全部")
-        regionMenu.subtitleLabel.text = ""
+        regionMenu.titleLabel?.text = selectedCity?.name.stringByAppendingString(" - 全部")
+        regionMenu.subtitleLabel?.text = ""
         //
-        var regionVc = regionPopover.contentViewController as! HMRegionsViewController
+        let regionVc = regionPopover.contentViewController as! HMRegionsViewController
         regionVc.regions = selectedCity?.regions as! [HMRegion]
         header.beginRefreshing()
         
@@ -111,7 +111,7 @@ class HMDealsViewController: HMDealListViewController {
     func sortSelect(noti:NSNotification){
         var dict = noti.userInfo as! [String:HMSort]
         selectedSort = dict[HMSortNotification.HMSelectedSort]
-        sortMenu.subtitleLabel.text = selectedSort?.label
+        sortMenu.subtitleLabel?.text = selectedSort?.label
         sortPopover.dismissPopoverAnimated(true)
         header.beginRefreshing()
         // 存储用户的选择到沙盒
@@ -123,8 +123,8 @@ class HMDealsViewController: HMDealListViewController {
         // 取出通知中的数据
         selectedRegion = noti.userInfo?[HMRegionNotification.HMSelectedRegion] as? HMRegion
         selectedSubRegionName = noti.userInfo?[HMRegionNotification.HMSelectedSubRegionName] as? String
-        regionMenu.titleLabel.text = "\(selectedCity.name) - \(selectedRegion.name)"
-        regionMenu.subtitleLabel.text = selectedSubRegionName
+        regionMenu.titleLabel?.text = "\(selectedCity.name) - \(selectedRegion.name)"
+        regionMenu.subtitleLabel?.text = selectedSubRegionName
         // 设置菜单数据
         
         // 关闭popover
@@ -139,10 +139,10 @@ class HMDealsViewController: HMDealListViewController {
         
         
         // 设置菜单数据
-        categoryMenu.imageButton.image = selectedCategory.icon
-        categoryMenu.imageButton.highlightedImage = selectedCategory.highlighted_icon
-        categoryMenu.titleLabel.text = selectedCategory.name
-        categoryMenu.subtitleLabel.text = selectedSubCategoryName
+        categoryMenu.imageButton?.image = selectedCategory.icon
+        categoryMenu.imageButton?.highlightedImage = selectedCategory.highlighted_icon
+        categoryMenu.titleLabel?.text = selectedCategory.name
+        categoryMenu.subtitleLabel?.text = selectedSubCategoryName
         
         // 关闭popover
         categoryPopover.dismissPopoverAnimated(true)
@@ -160,42 +160,42 @@ class HMDealsViewController: HMDealListViewController {
     private func setupNavLeft() {
         
         // 1.LOGO
-        var logoItem = UIBarButtonItem(imageName: "icon_meituan_logo", highImageName: "icon_meituan_logo", target: nil, action: nil)
+        let logoItem = UIBarButtonItem(imageName: "icon_meituan_logo", highImageName: "icon_meituan_logo", target: nil, action: nil)
         logoItem.customView?.userInteractionEnabled = false
         // 2.分类
         categoryMenu = HMDealsTopMenu()
-        var categoryItem = UIBarButtonItem(customView: categoryMenu)
+        let categoryItem = UIBarButtonItem(customView: categoryMenu)
         categoryMenu.addTarget(self, action: Selector("categoryMenuClick"))
         // 3.区域
         regionMenu = HMDealsTopMenu()
-        regionMenu.imageButton.image = "icon_district";
-        regionMenu.imageButton.highlightedImage = "icon_district_highlighted";
-        var selectName = selectedCity?.name ?? "   "
-        regionMenu.titleLabel.text = "\(selectName) - 全部"
-        var regionItem = UIBarButtonItem(customView: regionMenu)
+        regionMenu.imageButton?.image = "icon_district";
+        regionMenu.imageButton?.highlightedImage = "icon_district_highlighted";
+        let selectName = selectedCity?.name ?? "   "
+        regionMenu.titleLabel?.text = "\(selectName) - 全部"
+        let regionItem = UIBarButtonItem(customView: regionMenu)
         regionMenu.addTarget(self, action: Selector("regionMenuClick"))
         
         // 4.排序
         sortMenu = HMDealsTopMenu()
-        var sortItem = UIBarButtonItem(customView: sortMenu)
+        let sortItem = UIBarButtonItem(customView: sortMenu)
         sortMenu.addTarget(self, action: Selector("sortMenuClick"))
-        sortMenu.imageButton.image = "icon_sort";
-        sortMenu.imageButton.highlightedImage = "icon_sort_highlighted"
-        sortMenu.titleLabel.text = "排序"
-           sortMenu.subtitleLabel.text = self.selectedSort?.label;
+        sortMenu.imageButton?.image = "icon_sort";
+        sortMenu.imageButton?.highlightedImage = "icon_sort_highlighted"
+        sortMenu.titleLabel?.text = "排序"
+           sortMenu.subtitleLabel?.text = self.selectedSort?.label;
         self.navigationItem.leftBarButtonItems = [logoItem, categoryItem, regionItem, sortItem];
     }
     //    MARK: -leftItem Event
     /** 分类菜单 */
     func categoryMenuClick(){
-        var cs = categoryPopover.contentViewController as! HMCategoriesViewController
+        let cs = categoryPopover.contentViewController as! HMCategoriesViewController
         cs.selectedCategory = selectedCategory
         cs.selectedSubCategoryName = selectedSubCategoryName;
         categoryPopover.presentPopoverFromRect(categoryMenu.bounds, inView: categoryMenu, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
     }
     /** 区域菜单 */
     func regionMenuClick(){
-        var rs = regionPopover.contentViewController as! HMRegionsViewController
+        let rs = regionPopover.contentViewController as! HMRegionsViewController
         
         rs.selectedRegion = selectedRegion;
         rs.selectedSubRegionName = selectedSubRegionName;
@@ -204,7 +204,7 @@ class HMDealsViewController: HMDealListViewController {
     /** 排序菜单 */
     func sortMenuClick(){
         
-        var os = sortPopover.contentViewController as! HMSortsViewController
+        let os = sortPopover.contentViewController as! HMSortsViewController
         os.selectedSort = self.selectedSort;
         sortPopover.presentPopoverFromRect(sortMenu.bounds, inView: sortMenu, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
     }
@@ -213,14 +213,14 @@ class HMDealsViewController: HMDealListViewController {
     */
     private func setupNavRight() {
         //    // 1.地图
-        var mapItem = UIBarButtonItem(imageName: "icon_map", highImageName: "icon_map_highlighted", target: self    , action: Selector("mapClick"))
+        let mapItem = UIBarButtonItem(imageName: "icon_map", highImageName: "icon_map_highlighted", target: self    , action: Selector("mapClick"))
         mapItem.customView?.width = 50
         mapItem.customView?.height = 27
         
         
         //    // 2.搜索
         
-        var  searchItem = UIBarButtonItem(imageName: "icon_search", highImageName: "icon_search_highlighted", target: self, action: Selector("searchClick"))
+        let  searchItem = UIBarButtonItem(imageName: "icon_search", highImageName: "icon_search_highlighted", target: self, action: Selector("searchClick"))
         searchItem.customView?.width = mapItem.customView!.width
         searchItem.customView?.width = mapItem.customView!.height
         self.navigationItem.rightBarButtonItems = [mapItem,searchItem]
@@ -231,10 +231,10 @@ class HMDealsViewController: HMDealListViewController {
     *  搜索
     */
     func searchClick() {
-        var searchVc = HMSearchViewController(collectionViewLayout: UICollectionViewLayout())
+        let searchVc = HMSearchViewController(collectionViewLayout: UICollectionViewLayout())
         
         searchVc.selectedCity = self.selectedCity;
-        var nav = HMNavigationController(rootViewController: searchVc)
+        let nav = HMNavigationController(rootViewController: searchVc)
         presentViewController(nav, animated: true, completion: nil)
 
     }
@@ -243,16 +243,16 @@ class HMDealsViewController: HMDealListViewController {
     *  地图
     */
     func mapClick(){
-     var nav = HMNavigationController(rootViewController: HMMapViewController())
+     let nav = HMNavigationController(rootViewController: HMMapViewController())
         presentViewController(nav , animated: true, completion: nil)
     }
     /**
     封装请求参数
     
-    :returns: param
+    - returns: param
     */
     func buildParam() -> HMFindDealsParam {
-        var param = HMFindDealsParam()
+        let param = HMFindDealsParam()
         // 城市名称
         param.city = selectedCity?.name
         if selectedSort != nil {
@@ -286,7 +286,7 @@ class HMDealsViewController: HMDealListViewController {
     
     func loadNewDeals(){
         //    // 1.创建请求参数
-        var param = buildParam()
+        let param = buildParam()
         //    // 2.加载数据
         HMDealTool.findDeals(param, success: { (result) -> Void in
             if param != self.lastParam {return }
@@ -332,10 +332,10 @@ class HMDealsViewController: HMDealListViewController {
     */
     func loadMoreDeals(){
         //    // 1.创建请求参数
-        var param = buildParam()
+        let param = buildParam()
         //    // 页码
         if let  lastParam = self.lastParam {
-            var currentPage = lastParam.page.intValue + 1
+            let currentPage = lastParam.page.intValue + 1
             param.page = NSNumber(int: currentPage)
         }
         HMDealTool.findDeals(param, success: { (result) -> Void in
@@ -352,7 +352,7 @@ class HMDealsViewController: HMDealListViewController {
                 self.footer.endRefreshing()
                 //    // 回滚页码
                 if let  lastParam = self.lastParam {
-                    var currentPage = lastParam.page.intValue - 1
+                    let currentPage = lastParam.page.intValue - 1
                     param.page = NSNumber(int: currentPage)
                 }
         }
@@ -364,20 +364,20 @@ class HMDealsViewController: HMDealListViewController {
     private   func setupMenu(){
         
         //            // 1.周边的item
-        var mineItem = itemWithContent("icon_pathMenu_mine_normal", highlightedContent: "icon_pathMenu_mine_highlighted")
-        var  collectItem = itemWithContent("icon_pathMenu_collect_normal" , highlightedContent: "icon_pathMenu_collect_highlighted")
-        var scanItem = itemWithContent("icon_pathMenu_scan_normal", highlightedContent: "icon_pathMenu_more_normal")
-        var moreItem =  itemWithContent("icon_pathMenu_more_normal", highlightedContent: "icon_pathMenu_more_highlighted")
-        var items = [mineItem,collectItem,scanItem,moreItem]
+        let mineItem = itemWithContent("icon_pathMenu_mine_normal", highlightedContent: "icon_pathMenu_mine_highlighted")
+        let  collectItem = itemWithContent("icon_pathMenu_collect_normal" , highlightedContent: "icon_pathMenu_collect_highlighted")
+        let scanItem = itemWithContent("icon_pathMenu_scan_normal", highlightedContent: "icon_pathMenu_more_normal")
+        let moreItem =  itemWithContent("icon_pathMenu_more_normal", highlightedContent: "icon_pathMenu_more_highlighted")
+        let items = [mineItem,collectItem,scanItem,moreItem]
         //            // 2.中间的开始tiem
-        var startItem = AwesomeMenuItem(image: UIImage(named: "icon_pathMenu_background_normal"), highlightedImage:  UIImage(named:"icon_pathMenu_background_highlighted"), contentImage:  UIImage(named:"icon_pathMenu_mainMine_normal"), highlightedContentImage:  UIImage(named:"icon_pathMenu_mainMine_highlighted"))
-        var menu = AwesomeMenu(frame: CGRectZero, startItem: startItem, optionMenus: items)
+        let startItem = AwesomeMenuItem(image: UIImage(named: "icon_pathMenu_background_normal"), highlightedImage:  UIImage(named:"icon_pathMenu_background_highlighted"), contentImage:  UIImage(named:"icon_pathMenu_mainMine_normal"), highlightedContentImage:  UIImage(named:"icon_pathMenu_mainMine_highlighted"))
+        let menu = AwesomeMenu(frame: CGRectZero, startItem: startItem, optionMenus: items)
         view.addSubview(menu)
         
         //            // 真个菜单的活动范围
         menu.menuWholeAngle = CGFloat( M_PI_2);
         //            // 约束
-        var  menuH:CGFloat = 200
+        let  menuH:CGFloat = 200
         menu.autoSetDimensionsToSize(CGSize(width: 200, height: menuH))
         menu.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: 0)
         menu.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0)
@@ -430,11 +430,11 @@ extension HMDealsViewController:AwesomeMenuDelegate {
         awesomeMenuWillAnimateClose(menu)
         if (idx == 1) { // 收藏
             let collec = HMCollectViewController(collectionViewLayout: UICollectionViewFlowLayout())
-            var nav = HMNavigationController(rootViewController: collec)
+            let nav = HMNavigationController(rootViewController: collec)
             presentViewController(nav, animated: true, completion: nil)
         } else if (idx == 2) { // 浏览记录
             let history = HMHistoryViewController(collectionViewLayout: UICollectionViewFlowLayout())
-            var nav = HMNavigationController(rootViewController: history)
+            let nav = HMNavigationController(rootViewController: history)
             presentViewController(nav, animated: true, completion: nil)
         }
     }

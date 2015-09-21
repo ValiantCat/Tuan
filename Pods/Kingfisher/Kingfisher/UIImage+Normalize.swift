@@ -1,10 +1,10 @@
 //
-//  UIImage+Decode.swift
-//  Kingfisher-Demo
+//  UIImage+Normalize.swift
+//  Kingfisher
 //
-//  Created by Wei Wang on 15/4/7.
+//  Created by Tom Kraina on 15/8/5.
 //
-//  Copyright (c) 2015 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2015 Wei Wang. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,21 +24,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Foundation
+import UIKit
 
 extension UIImage {
-    func kf_decodedImage() -> UIImage? {
-        let imageRef = self.CGImage
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedLast.rawValue)
-        let context = CGBitmapContextCreate(nil, CGImageGetWidth(imageRef), CGImageGetHeight(imageRef), 8, 0, colorSpace, bitmapInfo)
-        if let context = context {
-            let rect = CGRectMake(0, 0, CGFloat(CGImageGetWidth(imageRef)), CGFloat(CGImageGetHeight(imageRef)))
-            CGContextDrawImage(context, rect, imageRef)
-            let decompressedImageRef = CGBitmapContextCreateImage(context)
-            return UIImage(CGImage: decompressedImageRef)
-        } else {
-            return nil
+    
+    func kf_normalizedImage() -> UIImage {
+        if imageOrientation == .Up {
+            return self
         }
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        drawInRect(CGRect(origin: CGPointZero, size: size))
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return normalizedImage;
     }
 }
+

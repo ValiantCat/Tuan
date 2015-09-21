@@ -5,17 +5,21 @@
 //  Created by nero on 15/5/23.
 //  Copyright (c) 2015年 nero. All rights reserved.
 //
+
+
+import UIKit
+import Kingfisher
+import SwiftDate
 protocol HMDealCellDelegate:class {
     func dealCellDidClickCover(dealCell:HMDealCell?)
-
+    
 }
-import UIKit
 //@IBDesignable
 class HMDealCell: UICollectionViewCell {
     override func drawRect(rect: CGRect) {
         UIImage(named: "bg_dealcell")?.drawInRect(rect)
     }
-      weak   var delegate:HMDealCellDelegate?
+    weak   var delegate:HMDealCellDelegate?
     @IBOutlet weak var dealNewView: UIImageView!
     @IBOutlet weak var  imageView:UIImageView!
     @IBOutlet weak var  titleLabel:UILabel!
@@ -64,7 +68,7 @@ class HMDealCell: UICollectionViewCell {
             purchaseCountLabel.text = String(format: "已售出%d", newValue.purchase_count)
             // 判断是否为最新的团购：发布日期 >= 今天的日期
             //            NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-            var  fmt = NSDateFormatter()
+            let  fmt = NSDateFormatter()
             fmt.dateFormat = "yyyy-MM-dd"
             if newValue.publish_date == nil {return }
             if let  publish_date = fmt.dateFromString(newValue.publish_date) {

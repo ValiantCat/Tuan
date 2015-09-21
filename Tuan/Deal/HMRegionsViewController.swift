@@ -13,7 +13,7 @@ class HMRegionsViewController: UIViewController {
     lazy var menu:HMDropdownMenu = {
         // 顶部的view
         
-        var topView = self.view.subviews.first as! UIView
+        var topView = self.view.subviews.first!
         // 创建菜单
         var menu = HMDropdownMenu()
         menu.delegate = self
@@ -27,7 +27,7 @@ class HMRegionsViewController: UIViewController {
         }()
     @IBAction func changeCity() {
 //             changeCityClosuer?()       
-        var cityesVC = HMCitiesViewController()
+        let cityesVC = HMCitiesViewController()
         cityesVC.view = NSBundle.mainBundle().loadNibNamed("HMCitiesViewController", owner: cityesVC, options: nil).last as! UIView
         cityesVC.modalPresentationStyle = UIModalPresentationStyle.FormSheet
         presentViewController(cityesVC, animated: true) { () -> Void in
@@ -51,7 +51,7 @@ class HMRegionsViewController: UIViewController {
     var selectedRegion:HMRegion! {
         willSet {
                  if newValue == nil {return }
-            var itsmNSArray = NSArray(array: menu.items)
+            let itsmNSArray = NSArray(array: menu.items)
             menu.selectMain(Int32(itsmNSArray.indexOfObject(newValue)))
         }
     }
@@ -61,7 +61,7 @@ class HMRegionsViewController: UIViewController {
     var selectedSubRegionName:NSString! {
         willSet {
             if newValue == nil {return }
-            var itsmNSArray = NSArray(array: menu.items)
+            let itsmNSArray = NSArray(array: menu.items)
 //            这个200 我瞎写的 为了屏蔽找不到索引越界的情况
             if itsmNSArray.indexOfObject(newValue) <= 200  {
             menu.selectSub(Int32(itsmNSArray.indexOfObject(newValue)))
@@ -74,19 +74,19 @@ extension HMRegionsViewController: HMDropdownMenuDelegate {
     func dropdownMenu(dropdownMenu: HMDropdownMenu!, didSelectSub subRow: Int32, ofMain mainRow: Int32) {
         // 发出通知，选中了某个分类
         var userinfo = [String:AnyObject]()
-        var region = dropdownMenu.items[Int(mainRow)] as! HMRegion
+        let region = dropdownMenu.items[Int(mainRow)] as! HMRegion
         userinfo[HMRegionNotification.HMSelectedRegion] = region
         userinfo[HMRegionNotification.HMSelectedSubRegionName] = region.subregions[Int(subRow)]
         HMNotificationCenter.postNotificationName(HMRegionNotification.HMRegionDidSelectNotification, object: nil, userInfo: userinfo)
     }
     func dropdownMenu(dropdownMenu: HMDropdownMenu!, didSelectMain mainRow: Int32) {
 
-        var region = dropdownMenu.items[Int(mainRow)] as! HMRegion
+        let region = dropdownMenu.items[Int(mainRow)] as! HMRegion
         if region.subregions != nil {
             if selectedRegion == regions {
                 // 选中右边的子区域
                 
-                var temp = selectedSubRegionName
+                let temp = selectedSubRegionName
                 if temp == nil {
                     return
                 }

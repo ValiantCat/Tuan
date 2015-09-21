@@ -28,6 +28,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <!--Connect to anything (this is probably BAD)-->
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
