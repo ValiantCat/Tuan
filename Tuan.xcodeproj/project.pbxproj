@@ -659,6 +659,7 @@
 				TargetAttributes = {
 					CEDD050E1B033AB10021BBAA = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = TNPQ8FN6VT;
 					};
 				};
 			};
@@ -921,10 +922,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tuan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dingdingzufang.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4b2a005c-9eb9-4189-89d8-76d0ec198a33";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Tuan/Tuan-Bridging-Header.h";
 			};
 			name = Debug;
@@ -935,10 +939,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tuan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dingdingzufang.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4b2a005c-9eb9-4189-89d8-76d0ec198a33";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Tuan/Tuan-Bridging-Header.h";
 			};
 			name = Release;
